@@ -1,0 +1,39 @@
+import { motion } from 'framer-motion';
+import { Heart } from 'lucide-react';
+
+export const Footer = () => {
+  return (
+    <footer className="py-8 bg-background border-t border-border">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="font-display text-xl font-semibold"
+          >
+            <span className="text-gradient">Ritesh Chauhan</span>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-sm text-muted-foreground flex items-center gap-1"
+          >
+            Serving the nation with <Heart size={14} className="text-secondary" /> since 2005
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-sm text-muted-foreground"
+          >
+            © {new Date().getFullYear()} All rights reserved
+          </motion.p>
+        </div>
+      </div>
+    </footer>
+  );
+};
