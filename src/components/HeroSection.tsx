@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Mail, ChevronDown } from 'lucide-react';
 import speakingImage from '@/assets/ritesh-speaking.jpg';
+import heroMountain from '@/assets/hero-mountain.jpg';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/ritesh-chauhan-58bb3646/', label: 'LinkedIn' },
@@ -17,15 +18,17 @@ const stats = [
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
-      {/* Abstract Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-30">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-accent/5 to-transparent" />
-        {/* Geometric patterns */}
-        <div className="absolute top-20 left-10 w-32 h-32 border border-primary/10 rounded-full" />
-        <div className="absolute top-40 left-20 w-20 h-20 border border-secondary/10 rounded-full" />
-        <div className="absolute bottom-40 right-20 w-40 h-40 border border-accent/10 rounded-full" />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroMountain}
+          alt="Digital India and Government backdrop"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -52,17 +55,17 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-light leading-tight"
             >
-              <span className="text-gradient">Ritesh</span>{' '}
-              <span className="text-foreground">Chauhan</span>
+              <span className="text-gradient font-bold">Ritesh</span>{' '}
+              <span className="text-white drop-shadow-lg">Chauhan</span>
             </motion.h1>
 
             <motion.blockquote
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-lg md:text-xl font-display italic text-muted-foreground border-l-4 border-primary pl-4"
+              className="text-lg md:text-xl font-display italic text-white/80 border-l-4 border-primary pl-4"
             >
               "The measure of a man is what he does with power"
               <span className="block text-sm mt-2 not-italic text-primary font-medium">— Plato</span>
@@ -72,11 +75,11 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-base text-muted-foreground max-w-md"
+              className="text-base text-white/70 max-w-md font-light"
             >
-              A dedicated <strong className="text-foreground">public servant</strong> committed to 
+              A dedicated <strong className="text-white font-medium">public servant</strong> committed to 
               transparent governance, sustainable development, and empowering communities 
-              across <strong className="text-foreground">Himachal Pradesh</strong> and India.
+              across <strong className="text-white font-medium">Himachal Pradesh</strong> and India.
             </motion.p>
 
             {/* Social Links */}
@@ -92,7 +95,7 @@ export const HeroSection = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-card shadow-soft flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-card hover:bg-primary/5 transition-all"
+                  className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm shadow-soft flex items-center justify-center text-white/80 hover:text-primary hover:bg-white/20 transition-all border border-white/20"
                   whileHover={{ scale: 1.1, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -122,7 +125,7 @@ export const HeroSection = () => {
                   <div className="font-display text-2xl font-bold text-gradient">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                  <div className="text-xs text-white/60 font-medium uppercase tracking-wide">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -181,16 +184,6 @@ export const HeroSection = () => {
                   </div>
                 </motion.div>
               </motion.div>
-              
-              {/* Floating Accent Element */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.4 }}
-                className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl flex items-center justify-center shadow-elevated"
-              >
-                <span className="text-white font-display text-3xl font-bold">19+</span>
-              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -215,7 +208,7 @@ export const HeroSection = () => {
               <div className="font-display text-lg font-bold text-gradient">
                 {stat.value}
               </div>
-              <div className="text-[10px] text-muted-foreground font-medium uppercase tracking-wide">
+              <div className="text-[10px] text-white/60 font-medium uppercase tracking-wide">
                 {stat.label}
               </div>
             </motion.div>
@@ -235,7 +228,7 @@ export const HeroSection = () => {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
+          <span className="text-xs text-white/60 uppercase tracking-widest">Scroll</span>
           <ChevronDown className="w-5 h-5 text-primary" />
         </motion.div>
       </motion.div>
