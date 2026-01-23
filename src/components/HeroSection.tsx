@@ -18,8 +18,8 @@ export const HeroSection = () => {
           alt="Digital India - Government Technology"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/85 to-background/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/95 to-background/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/30" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -46,9 +46,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg"
             >
-              Ritesh <span className="text-gradient">Chauhan</span>
+              Ritesh <span className="text-primary-foreground">Chauhan</span>
             </motion.h1>
 
             <motion.blockquote
