@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
-import heroImage from '@/assets/hero-mountain.jpg';
-import profileImage from '@/assets/ritesh-profile.jpg';
+import { Linkedin, Twitter, Mail, ChevronDown } from 'lucide-react';
+import speakingImage from '@/assets/ritesh-speaking.jpg';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/ritesh-chauhan-58bb3646/', label: 'LinkedIn' },
@@ -9,28 +8,34 @@ const socialLinks = [
   { icon: Mail, href: 'mailto:contact@riteshchauhan.in', label: 'Email' },
 ];
 
+const stats = [
+  { value: '19+', label: 'Years of Service' },
+  { value: 'HP', label: 'Cadre' },
+  { value: 'Jt. Secy', label: 'GoI Empanelment' },
+  { value: '3', label: 'Departments Led' },
+];
+
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Digital India - Government Technology"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/95 to-background/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/30" />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+      {/* Abstract Background Pattern */}
+      <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-accent/5 to-transparent" />
+        {/* Geometric patterns */}
+        <div className="absolute top-20 left-10 w-32 h-32 border border-primary/10 rounded-full" />
+        <div className="absolute top-40 left-20 w-20 h-20 border border-secondary/10 rounded-full" />
+        <div className="absolute bottom-40 right-20 w-40 h-40 border border-accent/10 rounded-full" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Text Content - Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="lg:col-span-5 space-y-6"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,26 +52,27 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             >
-              Ritesh <span className="text-primary-foreground">Chauhan</span>
+              <span className="text-gradient">Ritesh</span>{' '}
+              <span className="text-foreground">Chauhan</span>
             </motion.h1>
 
             <motion.blockquote
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-xl md:text-2xl font-display italic text-muted-foreground border-l-4 border-primary pl-4"
+              className="text-lg md:text-xl font-display italic text-muted-foreground border-l-4 border-primary pl-4"
             >
               "The measure of a man is what he does with power"
-              <span className="block text-sm mt-2 not-italic text-primary">— Plato</span>
+              <span className="block text-sm mt-2 not-italic text-primary font-medium">— Plato</span>
             </motion.blockquote>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-lg text-muted-foreground max-w-lg"
+              className="text-base text-muted-foreground max-w-md"
             >
               A dedicated <strong className="text-foreground">public servant</strong> committed to 
               transparent governance, sustainable development, and empowering communities 
@@ -78,7 +84,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex gap-4 pt-4"
+              className="flex gap-4 pt-2"
             >
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -86,93 +92,151 @@ export const HeroSection = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-card shadow-soft flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-card transition-all"
+                  className="w-11 h-11 rounded-full bg-card shadow-soft flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-card hover:bg-primary/5 transition-all"
                   whileHover={{ scale: 1.1, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
                 >
-                  <social.icon size={20} />
+                  <social.icon size={18} />
                 </motion.a>
+              ))}
+            </motion.div>
+
+            {/* Stats Row - Below text on larger screens */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="hidden md:flex gap-6 pt-4"
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 1.1 + index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="font-display text-2xl font-bold text-gradient">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+                    {stat.label}
+                  </div>
+                </motion.div>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* Profile Photo & Stats Card */}
+          {/* Dynamic Speaking Photo - Right Side */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex flex-col items-center gap-8"
+            initial={{ opacity: 0, scale: 0.9, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="lg:col-span-7 relative"
           >
-            {/* Profile Photo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="relative"
-            >
-              <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-elevated">
+            {/* Main Photo Container */}
+            <div className="relative">
+              {/* Decorative Elements Behind */}
+              <div className="absolute -top-6 -right-6 w-full h-full bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 rounded-3xl" />
+              <div className="absolute -top-3 -right-3 w-full h-full border-2 border-primary/20 rounded-3xl" />
+              
+              {/* Main Image */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="relative rounded-3xl overflow-hidden shadow-elevated"
+              >
                 <img
-                  src={profileImage}
-                  alt="Ritesh Chauhan - IAS Officer"
-                  className="w-full h-full object-cover object-top"
+                  src={speakingImage}
+                  alt="Ritesh Chauhan speaking at international conference on disaster management"
+                  className="w-full h-auto object-cover aspect-[4/3]"
                 />
-              </div>
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-1 w-32 tricolor-bar rounded-full" />
-            </motion.div>
-
-            {/* Stats Card */}
-            <div className="glass rounded-2xl p-6 shadow-elevated border border-primary/10 w-full max-w-sm">
-              <h3 className="font-display text-lg font-semibold mb-4 text-gradient text-center">
-                At a Glance
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: '19+', label: 'Years of Service' },
-                  { value: 'HP', label: 'Cadre' },
-                  { value: 'Jt. Secy', label: 'GoI Empanelment' },
-                  { value: '3', label: 'Departments Led' },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                    className="text-center p-3 rounded-xl bg-subtle-gradient border border-primary/5 hover:shadow-card transition-all duration-300"
-                  >
-                    <div className="font-display text-2xl font-bold text-gradient">
-                      {stat.value}
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10" />
+                
+                {/* Caption Badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  className="absolute bottom-4 left-4 right-4"
+                >
+                  <div className="glass rounded-xl px-4 py-3 border border-white/20">
+                    <div className="flex items-center gap-3">
+                      <div className="h-8 w-1 tricolor-bar rounded-full" />
+                      <div>
+                        <p className="text-white text-sm font-medium">
+                          International Forum on Disaster Resilience
+                        </p>
+                        <p className="text-white/70 text-xs">
+                          Thought Leadership in Climate Adaptation & Policy
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-xs text-muted-foreground mt-1 font-medium">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+              
+              {/* Floating Accent Element */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.4 }}
+                className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl flex items-center justify-center shadow-elevated"
+              >
+                <span className="text-white font-display text-3xl font-bold">19+</span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Mobile Stats - Show below on mobile */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        className="md:hidden absolute bottom-24 left-0 right-0 px-6"
+      >
+        <div className="grid grid-cols-4 gap-2">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 1.1 + index * 0.1 }}
+              className="text-center glass rounded-lg p-2"
+            >
+              <div className="font-display text-lg font-bold text-gradient">
+                {stat.value}
+              </div>
+              <div className="text-[10px] text-muted-foreground font-medium uppercase tracking-wide">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2"
         >
-          <motion.div
-            animate={{ height: ['20%', '60%', '20%'] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 bg-primary rounded-full"
-          />
+          <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
+          <ChevronDown className="w-5 h-5 text-primary" />
         </motion.div>
       </motion.div>
     </section>
