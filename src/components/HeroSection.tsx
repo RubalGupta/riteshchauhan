@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 import heroImage from '@/assets/hero-mountain.jpg';
+import profileImage from '@/assets/ritesh-profile.jpg';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/ritesh-chauhan-58bb3646/', label: 'LinkedIn' },
@@ -98,19 +99,36 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Stats Card */}
+          {/* Profile Photo & Stats Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:block"
+            className="hidden lg:flex flex-col items-center gap-8"
           >
-            <div className="glass rounded-2xl p-8 shadow-elevated border border-primary/10">
-              <div className="h-1 tricolor-bar rounded-full mb-6" />
-              <h3 className="font-display text-xl font-semibold mb-6 text-gradient">
+            {/* Profile Photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="relative"
+            >
+              <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-elevated">
+                <img
+                  src={profileImage}
+                  alt="Ritesh Chauhan - IAS Officer"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-1 w-32 tricolor-bar rounded-full" />
+            </motion.div>
+
+            {/* Stats Card */}
+            <div className="glass rounded-2xl p-6 shadow-elevated border border-primary/10 w-full max-w-sm">
+              <h3 className="font-display text-lg font-semibold mb-4 text-gradient text-center">
                 At a Glance
               </h3>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4">
                 {[
                   { value: '19+', label: 'Years of Service' },
                   { value: 'HP', label: 'Cadre' },
@@ -122,12 +140,12 @@ export const HeroSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                    className="text-center p-4 rounded-xl bg-subtle-gradient border border-primary/5 hover:shadow-card transition-all duration-300"
+                    className="text-center p-3 rounded-xl bg-subtle-gradient border border-primary/5 hover:shadow-card transition-all duration-300"
                   >
-                    <div className="font-display text-3xl font-bold text-gradient">
+                    <div className="font-display text-2xl font-bold text-gradient">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-muted-foreground mt-1 font-medium">
+                    <div className="text-xs text-muted-foreground mt-1 font-medium">
                       {stat.label}
                     </div>
                   </motion.div>
