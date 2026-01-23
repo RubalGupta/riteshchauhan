@@ -15,10 +15,11 @@ export const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Himalayan Mountains"
+          alt="Digital India - Government Technology"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/85 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -36,7 +37,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="inline-block"
             >
-              <span className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-medium">
+              <span className="px-4 py-2 bg-tech-gradient text-white rounded-full text-sm font-medium shadow-lg">
                 IAS Officer • 2005 Batch
               </span>
             </motion.div>
@@ -104,7 +105,8 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="hidden lg:block"
           >
-            <div className="glass rounded-2xl p-8 shadow-elevated">
+            <div className="glass rounded-2xl p-8 shadow-elevated border border-primary/10">
+              <div className="h-1 tricolor-bar rounded-full mb-6" />
               <h3 className="font-display text-xl font-semibold mb-6 text-gradient">
                 At a Glance
               </h3>
@@ -120,12 +122,12 @@ export const HeroSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                    className="text-center p-4 rounded-xl bg-subtle-gradient"
+                    className="text-center p-4 rounded-xl bg-subtle-gradient border border-primary/5 hover:shadow-card transition-all duration-300"
                   >
-                    <div className="font-display text-3xl font-bold text-primary">
+                    <div className="font-display text-3xl font-bold text-gradient">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-muted-foreground mt-1">
+                    <div className="text-sm text-muted-foreground mt-1 font-medium">
                       {stat.label}
                     </div>
                   </motion.div>
