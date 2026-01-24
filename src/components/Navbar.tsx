@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'Profile', href: '#profile' },
   { name: 'Career', href: '#career' },
   { name: 'Vision', href: '#vision' },
-  { name: 'Media', href: '#media' },
+  { name: 'Media', href: '#media', featured: true },
   { name: 'Principles', href: '#principles' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -56,23 +57,84 @@ export const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
-                }}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  activeSection === link.href.replace('#', '')
-                    ? 'text-primary'
-                    : 'text-muted-foreground'
-                }`}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {link.name}
-              </motion.a>
+              link.featured ? (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
+                  className="relative group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {/* Glowing background */}
+                  <motion.span
+                    className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 rounded-full blur-sm"
+                    animate={{
+                      opacity: [0.5, 1, 0.5],
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  
+                  {/* Badge container */}
+                  <span className="relative flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-full text-sm font-semibold shadow-lg">
+                    {/* Sparkle icon with animation */}
+                    <motion.span
+                      animate={{
+                        rotate: [0, 15, -15, 0],
+                        scale: [1, 1.2, 1],
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Sparkles size={14} className="text-yellow-300" />
+                    </motion.span>
+                    
+                    {/* Text with subtle bounce */}
+                    <motion.span
+                      animate={{
+                        y: [0, -2, 0],
+                      }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.2,
+                      }}
+                    >
+                      {link.name}
+                    </motion.span>
+                  </span>
+                </motion.a>
+              ) : (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    activeSection === link.href.replace('#', '')
+                      ? 'text-primary'
+                      : 'text-muted-foreground'
+                  }`}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {link.name}
+                </motion.a>
+              )
             ))}
           </div>
 
