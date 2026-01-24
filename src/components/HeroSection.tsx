@@ -264,7 +264,7 @@ export const HeroSection = () => {
                 {/* Photo frame with gradient border */}
                 <div className="w-[280px] h-[350px] lg:w-[340px] lg:h-[420px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
                   <div className="w-full h-full rounded-xl overflow-hidden bg-background">
-                    <img src={portraitImage} alt="Ritesh Chauhan - IAS Officer" className="w-full h-full object-cover object-top" />
+                    <img src={portraitImage} alt="Ritesh Chauhan - IAS Officer" className="w-full h-full object-cover object-top shadow-md" />
                   </div>
                 </div>
                 
