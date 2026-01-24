@@ -89,9 +89,9 @@ export const HeroSection = () => {
             duration: 0.6,
             delay: 0.7
           }} className="text-lg font-medium max-w-lg drop-shadow-md text-muted">
-              A dedicated <strong className="text-white font-bold">public servant</strong> committed to 
+              A dedicated <strong className="font-bold text-destructive">public servant</strong> committed to 
               transparent governance, sustainable development, and empowering communities 
-              across <strong className="text-white font-bold">Himachal Pradesh</strong> and India.
+              across <strong className="font-bold text-destructive">Himachal Pradesh</strong> and India.
             </motion.p>
 
             {/* Social Links */}
