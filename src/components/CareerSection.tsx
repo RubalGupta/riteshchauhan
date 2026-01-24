@@ -5,31 +5,10 @@ import { TrendingUp, Users, Briefcase, Award } from 'lucide-react';
 
 const careerHighlights = [
   {
-    year: '2010',
-    title: 'District Magistrate, Lahaul & Spiti',
-    description: 'Introduced community apple plantations under MGNREGA, helping 1,200 families shift from subsistence farming to commercial agriculture through community-led change.',
-    impact: '1,200 families transformed',
-    highlight: true,
-  },
-  {
-    year: '2018-21',
-    title: 'PS to Union Ministers (Health & Coal)',
-    description: 'Designed Ayushman Bharat–PMJAY, covering 11.8 million families and onboarding 15,000+ hospitals within a year. Spearheaded India\'s first e-pharmacy policy framework, growing the market from US$0.5B to US$3.18B.',
-    impact: 'US$3.18B market created',
-    highlight: true,
-  },
-  {
-    year: '2018-21',
-    title: 'Ministry of Coal & Mines Reforms',
-    description: 'Steered India\'s largest resource sector reforms including commercial coal mining that unlocked US$11 billion in revenue potential, reduced imports by 37%, and doubled state mineral revenues.',
-    impact: 'US$11B revenue unlocked',
-    highlight: true,
-  },
-  {
-    year: '2022',
-    title: 'Crop Insurance Program Revival',
-    description: 'Led the revival of India\'s national crop insurance program. Achieved 65% of claims settled within 10 days (versus 2 months previously), bringing 3 states and 4 insurers back onboard.',
-    impact: '65% claims in 10 days',
+    year: 'Present',
+    title: 'Secretary, Animal Husbandry, HP',
+    description: 'Working on State\'s First Small Ruminant development policy and contributing to the design of a National Livestock Insurance Program, keeping technology at the center to serve people.',
+    impact: 'State-first policy design',
     highlight: true,
   },
   {
@@ -40,10 +19,31 @@ const careerHighlights = [
     highlight: true,
   },
   {
-    year: 'Present',
-    title: 'Secretary, Animal Husbandry, HP',
-    description: 'Working on State\'s First Small Ruminant development policy and contributing to the design of a National Livestock Insurance Program, keeping technology at the center to serve people.',
-    impact: 'State-first policy design',
+    year: '2022',
+    title: 'Crop Insurance Program Revival',
+    description: 'Led the revival of India\'s national crop insurance program. Achieved 65% of claims settled within 10 days (versus 2 months previously), bringing 3 states and 4 insurers back onboard.',
+    impact: '65% claims in 10 days',
+    highlight: true,
+  },
+  {
+    year: '2018-21',
+    title: 'Ministry of Coal & Mines Reforms',
+    description: 'Steered India\'s largest resource sector reforms including commercial coal mining that unlocked US$11 billion in revenue potential, reduced imports by 37%, and doubled state mineral revenues.',
+    impact: 'US$11B revenue unlocked',
+    highlight: true,
+  },
+  {
+    year: '2018-21',
+    title: 'PS to Union Ministers (Health & Coal)',
+    description: 'Designed Ayushman Bharat–PMJAY, covering 11.8 million families and onboarding 15,000+ hospitals within a year. Spearheaded India\'s first e-pharmacy policy framework, growing the market from US$0.5B to US$3.18B.',
+    impact: 'US$3.18B market created',
+    highlight: true,
+  },
+  {
+    year: '2010',
+    title: 'District Magistrate, Lahaul & Spiti',
+    description: 'Introduced community apple plantations under MGNREGA, helping 1,200 families shift from subsistence farming to commercial agriculture through community-led change.',
+    impact: '1,200 families transformed',
     highlight: true,
   },
 ];
@@ -168,7 +168,7 @@ export const CareerSection = () => {
               "For the first time, modernization feels like our journey, not something imposed on us."
             </p>
             <footer className="mt-4 text-sm text-primary font-medium">
-              — An elderly cooperative president, on NAFED's transformation
+              — On NAFED's transformation
             </footer>
           </blockquote>
         </motion.div>
