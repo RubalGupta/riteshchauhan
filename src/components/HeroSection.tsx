@@ -56,21 +56,21 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-xl md:text-2xl font-display italic text-white/80 border-l-4 border-primary pl-4"
+              className="text-xl md:text-2xl font-display italic text-white font-semibold border-l-4 border-primary pl-4 drop-shadow-md"
             >
               "The measure of a man is what he does with power"
-              <span className="block text-sm mt-2 not-italic text-primary">— Plato</span>
+              <span className="block text-sm mt-2 not-italic text-primary font-bold">— Plato</span>
             </motion.blockquote>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-lg text-white/70 max-w-lg"
+              className="text-lg text-white font-medium max-w-lg drop-shadow-md"
             >
-              A dedicated <strong className="text-white">public servant</strong> committed to 
+              A dedicated <strong className="text-white font-bold">public servant</strong> committed to 
               transparent governance, sustainable development, and empowering communities 
-              across <strong className="text-white">Himachal Pradesh</strong> and India.
+              across <strong className="text-white font-bold">Himachal Pradesh</strong> and India.
             </motion.p>
 
             {/* Social Links */}
@@ -134,7 +134,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex justify-center items-center relative"
+            className="flex justify-center items-center relative mt-8 lg:mt-0"
           >
             {/* Decorative elements behind the photo */}
             <div className="absolute inset-0 flex items-center justify-center">
