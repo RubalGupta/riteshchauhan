@@ -7,6 +7,7 @@ const navLinks = [
   { name: 'Career', href: '#career' },
   { name: 'Vision', href: '#vision' },
   { name: 'Media', href: '#media' },
+  { name: 'Principles', href: '#principles' },
   { name: 'Contact', href: '#contact' },
 ];
 
