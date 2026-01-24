@@ -24,13 +24,13 @@ export const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh]">
           {/* Text Content - Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-6 order-2 lg:order-1"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -134,16 +134,16 @@ export const HeroSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center items-center relative mt-8 lg:mt-0"
+            className="flex justify-center lg:justify-end items-center relative order-1 lg:order-2"
           >
             {/* Decorative elements behind the photo */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center lg:justify-end">
               {/* Large background circle */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 blur-3xl"
+                className="absolute w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] rounded-full bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 blur-3xl"
               />
               
               {/* Decorative ring 1 */}
@@ -151,7 +151,7 @@ export const HeroSection = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="absolute w-[420px] h-[420px] rounded-full border-2 border-primary/20"
+                className="absolute w-[320px] h-[320px] lg:w-[420px] lg:h-[420px] rounded-full border-2 border-primary/20"
               />
               
               {/* Decorative ring 2 */}
@@ -159,7 +159,7 @@ export const HeroSection = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="absolute w-[380px] h-[380px] rounded-full border border-secondary/30"
+                className="absolute w-[280px] h-[280px] lg:w-[380px] lg:h-[380px] rounded-full border border-secondary/30"
               />
               
               {/* Accent shapes */}
@@ -194,7 +194,7 @@ export const HeroSection = () => {
             >
               <div className="relative">
                 {/* Photo frame with gradient border */}
-                <div className="w-[340px] h-[420px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
+                <div className="w-[280px] h-[350px] lg:w-[340px] lg:h-[420px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
                   <div className="w-full h-full rounded-xl overflow-hidden bg-background">
                     <img
                       src={portraitImage}
