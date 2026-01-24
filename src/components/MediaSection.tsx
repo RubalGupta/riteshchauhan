@@ -13,7 +13,7 @@ const mediaItems = [
     title: '13th PMFBY Conference: Disaster management',
     description: 'Bridging the massive financing gap is not just a fiscal necessity but a moral imperative to protect our most vulnerable communities and critical infrastructure.',
     thumbnail: 'https://img.youtube.com/vi/CZnBvNrheU4/maxresdefault.jpg',
-    url: 'https://www.youtube.com/live/CZnBvNrheU4?si=INNa8vIKbMJJD-ox&t=16740',
+    url: 'https://www.youtube.com/live/CZnBvNrheU4?si=INNa8vIKbMJJD-ox&t=16754',
     duration: 'Live Session',
     accent: 'from-red-500 to-red-600',
   },
