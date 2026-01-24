@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
+import { Linkedin, Facebook, Mail } from 'lucide-react';
 import heroImage from '@/assets/hero-mountain.jpg';
+import portraitImage from '@/assets/ritesh-portrait.jpg';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/ritesh-chauhan-58bb3646/', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
   { icon: Mail, href: 'mailto:contact@riteshchauhan.in', label: 'Email' },
 ];
 
@@ -18,13 +19,13 @@ export const HeroSection = () => {
           alt="Digital India - Government Technology"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/95 to-background/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/95 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-background/40" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+          {/* Text Content - Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -48,14 +49,14 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg"
             >
-              Ritesh <span className="text-primary-foreground">Chauhan</span>
+              Ritesh <span className="text-white">Chauhan</span>
             </motion.h1>
 
             <motion.blockquote
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-xl md:text-2xl font-display italic text-muted-foreground border-l-4 border-primary pl-4"
+              className="text-xl md:text-2xl font-display italic text-white/80 border-l-4 border-primary pl-4"
             >
               "The measure of a man is what he does with power"
               <span className="block text-sm mt-2 not-italic text-primary">— Plato</span>
@@ -65,11 +66,11 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-lg text-muted-foreground max-w-lg"
+              className="text-lg text-white/70 max-w-lg"
             >
-              A dedicated <strong className="text-foreground">public servant</strong> committed to 
+              A dedicated <strong className="text-white">public servant</strong> committed to 
               transparent governance, sustainable development, and empowering communities 
-              across <strong className="text-foreground">Himachal Pradesh</strong> and India.
+              across <strong className="text-white">Himachal Pradesh</strong> and India.
             </motion.p>
 
             {/* Social Links */}
@@ -85,7 +86,7 @@ export const HeroSection = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-card shadow-soft flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-card transition-all"
+                  className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all"
                   whileHover={{ scale: 1.1, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -96,44 +97,124 @@ export const HeroSection = () => {
                 </motion.a>
               ))}
             </motion.div>
+
+            {/* Stats - Below Bio */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="grid grid-cols-4 gap-4 pt-6"
+            >
+              {[
+                { value: '19+', label: 'Years' },
+                { value: 'HP', label: 'Cadre' },
+                { value: 'Jt. Secy', label: 'GoI' },
+                { value: '3', label: 'Depts' },
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 1.1 + index * 0.1 }}
+                  className="text-center p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+                >
+                  <div className="font-display text-2xl font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-white/60 mt-1 font-medium">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
 
-          {/* Stats Card */}
+          {/* Photo - Right Side with TED-talk style decorative elements */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:block"
+            className="hidden lg:flex justify-center items-center relative"
           >
-            <div className="glass rounded-2xl p-8 shadow-elevated border border-primary/10">
-              <div className="h-1 tricolor-bar rounded-full mb-6" />
-              <h3 className="font-display text-xl font-semibold mb-6 text-gradient">
-                At a Glance
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { value: '19+', label: 'Years of Service' },
-                  { value: 'HP', label: 'Cadre' },
-                  { value: 'Jt. Secy', label: 'GoI Empanelment' },
-                  { value: '3', label: 'Departments Led' },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                    className="text-center p-4 rounded-xl bg-subtle-gradient border border-primary/5 hover:shadow-card transition-all duration-300"
-                  >
-                    <div className="font-display text-3xl font-bold text-gradient">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-muted-foreground mt-1 font-medium">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            {/* Decorative elements behind the photo */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              {/* Large background circle */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 blur-3xl"
+              />
+              
+              {/* Decorative ring 1 */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="absolute w-[420px] h-[420px] rounded-full border-2 border-primary/20"
+              />
+              
+              {/* Decorative ring 2 */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="absolute w-[380px] h-[380px] rounded-full border border-secondary/30"
+              />
+              
+              {/* Accent shapes */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-secondary/40 to-secondary/10 rounded-full blur-xl"
+              />
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
+                className="absolute bottom-20 left-10 w-16 h-16 bg-gradient-to-br from-accent/40 to-accent/10 rounded-full blur-xl"
+              />
+              
+              {/* Tricolor accent bar */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="absolute -left-4 top-1/2 -translate-y-1/2 h-32 w-1 tricolor-bar rounded-full origin-center"
+              />
             </div>
+            
+            {/* Main photo container */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative z-10"
+            >
+              <div className="relative">
+                {/* Photo frame with gradient border */}
+                <div className="w-[340px] h-[420px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
+                  <div className="w-full h-full rounded-xl overflow-hidden bg-background">
+                    <img
+                      src={portraitImage}
+                      alt="Ritesh Chauhan - IAS Officer"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+                
+                {/* Floating badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.3 }}
+                  className="absolute -bottom-4 -right-4 px-4 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-full text-sm font-semibold shadow-lg"
+                >
+                  HP Cadre • IAS
+                </motion.div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -148,12 +229,12 @@ export const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2"
+          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
         >
           <motion.div
             animate={{ height: ['20%', '60%', '20%'] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 bg-primary rounded-full"
+            className="w-1 bg-white rounded-full"
           />
         </motion.div>
       </motion.div>
