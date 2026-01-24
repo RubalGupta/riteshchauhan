@@ -57,7 +57,7 @@ export const VisionSection = () => {
             Vision & <span className="text-gradient">Values</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
-            I have been an IAS officer for two decades, witnessing firsthand the gap between policy 
+            Being a practitioner of governance, I have witnessed firsthand the gap between policy 
             and the lives of people it impacts. From farmers waiting months for crop insurance claims 
             to cooperatives struggling with legacy systems — these experiences shaped my vision for 
             <strong className="text-foreground"> technology that bridges this divide</strong>.
@@ -125,7 +125,7 @@ export const VisionSection = () => {
               The Next Decade
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              My past achievements are milestones, not destinations. In the next 10 years, I want to 
+              My past achievements are milestones, not destinations. In the next decade, I want to 
               bring the power of <strong className="text-foreground">AI to tools that support agriculture 
               and rural communities</strong>. In the long term, I will dedicate my efforts to collaborating 
               with institutions such as the World Bank, FAO, and UNDP.
