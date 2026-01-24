@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import { Video } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -65,55 +65,43 @@ export const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="relative group"
-                  whileHover={{ scale: 1.05 }}
+                  className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-primary ${
+                    activeSection === link.href.replace('#', '')
+                      ? 'text-primary'
+                      : 'text-muted-foreground'
+                  }`}
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {/* Glowing background */}
+                  {/* Video icon with animation */}
                   <motion.span
-                    className="absolute -inset-1.5 bg-cyan-400/20 rounded-full blur-sm"
                     animate={{
-                      opacity: [0.3, 0.6, 0.3],
+                      rotate: [0, 10, -10, 0],
+                      scale: [1, 1.15, 1],
                     }}
                     transition={{
-                      duration: 2,
+                      duration: 1.5,
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                  />
+                  >
+                    <Video size={14} className="text-cyan-500" />
+                  </motion.span>
                   
-                  {/* Badge container */}
-                  <span className="relative flex items-center gap-1.5 px-3 py-1 border border-cyan-400 text-cyan-500 rounded-full text-sm font-medium bg-background/80 backdrop-blur-sm">
-                    {/* Sparkle icon with animation */}
-                    <motion.span
-                      animate={{
-                        rotate: [0, 15, -15, 0],
-                        scale: [1, 1.2, 1],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      <Sparkles size={14} className="text-cyan-400" />
-                    </motion.span>
-                    
-                    {/* Text with subtle bounce */}
-                    <motion.span
-                      animate={{
-                        y: [0, -2, 0],
-                      }}
-                      transition={{
-                        duration: 1,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 0.2,
-                      }}
-                    >
-                      {link.name}
-                    </motion.span>
-                  </span>
+                  {/* Text with subtle bounce */}
+                  <motion.span
+                    animate={{
+                      y: [0, -2, 0],
+                    }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.2,
+                    }}
+                  >
+                    {link.name}
+                  </motion.span>
                 </motion.a>
               ) : (
                 <motion.a
