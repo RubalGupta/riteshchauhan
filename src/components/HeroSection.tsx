@@ -134,7 +134,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex justify-center items-center relative"
+            className="flex justify-center items-center relative mt-8 lg:mt-0"
           >
             {/* Decorative elements behind the photo */}
             <div className="absolute inset-0 flex items-center justify-center">
