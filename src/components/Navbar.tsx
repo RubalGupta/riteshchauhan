@@ -71,10 +71,9 @@ export const Navbar = () => {
                 >
                   {/* Glowing background */}
                   <motion.span
-                    className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 rounded-full blur-sm"
+                    className="absolute -inset-1.5 bg-cyan-400/20 rounded-full blur-sm"
                     animate={{
-                      opacity: [0.5, 1, 0.5],
-                      scale: [1, 1.1, 1],
+                      opacity: [0.3, 0.6, 0.3],
                     }}
                     transition={{
                       duration: 2,
@@ -84,7 +83,7 @@ export const Navbar = () => {
                   />
                   
                   {/* Badge container */}
-                  <span className="relative flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-full text-sm font-semibold shadow-lg">
+                  <span className="relative flex items-center gap-1.5 px-3 py-1 border border-cyan-400 text-cyan-500 rounded-full text-sm font-medium bg-background/80 backdrop-blur-sm">
                     {/* Sparkle icon with animation */}
                     <motion.span
                       animate={{
@@ -97,7 +96,7 @@ export const Navbar = () => {
                         ease: "easeInOut",
                       }}
                     >
-                      <Sparkles size={14} className="text-yellow-300" />
+                      <Sparkles size={14} className="text-cyan-400" />
                     </motion.span>
                     
                     {/* Text with subtle bounce */}
