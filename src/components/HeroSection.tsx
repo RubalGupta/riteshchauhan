@@ -25,7 +25,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh]">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start min-h-[80vh] pt-8 lg:pt-12">
           {/* Text Content - Left Side */}
           <motion.div initial={{
           opacity: 0,
@@ -177,7 +177,7 @@ export const HeroSection = () => {
         }} transition={{
           duration: 0.8,
           delay: 0.4
-        }} className="flex justify-center lg:justify-end items-center relative order-1 lg:order-2">
+        }} className="flex justify-center lg:justify-end items-start relative order-1 lg:order-2">
             {/* Decorative elements behind the photo */}
             <div className="absolute inset-0 flex items-center justify-center lg:justify-end">
               {/* Large background circle */}
@@ -262,7 +262,7 @@ export const HeroSection = () => {
           }} className="relative z-10">
               <div className="relative">
                 {/* Photo frame with gradient border */}
-                <div className="w-[340px] h-[280px] lg:w-[520px] lg:h-[380px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
+                <div className="w-[360px] h-[200px] lg:w-[600px] lg:h-[340px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
                   <div className="w-full h-full rounded-xl overflow-hidden bg-background">
                     <img src={portraitImage} alt="Ritesh Chauhan - IAS Officer" className="w-full h-full object-cover object-center shadow-none" />
                   </div>
