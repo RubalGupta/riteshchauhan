@@ -62,7 +62,7 @@ export const HeroSection = () => {
             duration: 0.6,
             delay: 0.5
           }} className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg">
-              Ritesh <span className="text-destructive">Chauhan</span>
+              Ritesh <span className="text-sidebar">Chauhan</span>
             </motion.h1>
 
             <motion.blockquote initial={{
