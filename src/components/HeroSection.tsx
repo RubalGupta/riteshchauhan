@@ -124,47 +124,6 @@ export const HeroSection = () => {
                 </motion.a>)}
             </motion.div>
 
-            {/* Stats - Below Bio */}
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.6,
-            delay: 1
-          }} className="grid grid-cols-4 gap-4 pt-6">
-              {[{
-              value: '19+',
-              label: 'Years'
-            }, {
-              value: 'HP',
-              label: 'Cadre'
-            }, {
-              value: 'Jt. Secy',
-              label: 'GoI'
-            }, {
-              value: '3',
-              label: 'Depts'
-            }].map((stat, index) => <motion.div key={stat.label} initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.4,
-              delay: 1.1 + index * 0.1
-            }} className="text-center p-3 rounded-xl backdrop-blur-sm border border-white/10 bg-slate-500">
-                  <div className="font-display text-2xl font-bold text-white">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs text-white/60 mt-1 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>)}
-            </motion.div>
           </motion.div>
 
           {/* Photo - Right Side with TED-talk style decorative elements */}
@@ -324,6 +283,55 @@ export const HeroSection = () => {
                   HP Cadre • IAS
                 </motion.div>
               </div>
+              
+              {/* Stats - Below Portrait */}
+              <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.6,
+                delay: 1
+              }} className="flex justify-center lg:justify-start gap-3 mt-8 w-full">
+                {[{
+                  value: '19+',
+                  label: 'Years Service',
+                  color: 'from-primary to-primary/80'
+                }, {
+                  value: 'HP',
+                  label: 'Cadre',
+                  color: 'from-secondary to-secondary/80'
+                }, {
+                  value: 'Jt. Secy',
+                  label: 'GoI',
+                  color: 'from-accent to-accent/80'
+                }, {
+                  value: '3',
+                  label: 'Departments',
+                  color: 'from-cyan-500 to-cyan-600'
+                }].map((stat, index) => <motion.div key={stat.label} initial={{
+                  opacity: 0,
+                  y: 20
+                }} animate={{
+                  opacity: 1,
+                  y: 0
+                }} transition={{
+                  duration: 0.4,
+                  delay: 1.1 + index * 0.1
+                }} whileHover={{
+                  scale: 1.05,
+                  y: -2
+                }} className={`text-center px-4 py-3 rounded-xl bg-gradient-to-br ${stat.color} shadow-lg`}>
+                  <div className="font-display text-xl lg:text-2xl font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-[10px] lg:text-xs text-white/80 mt-0.5 font-medium uppercase tracking-wide">
+                    {stat.label}
+                  </div>
+                </motion.div>)}
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
