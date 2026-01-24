@@ -5,10 +5,10 @@ import { Video } from 'lucide-react';
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'Profile', href: '#profile' },
+  { name: 'Media', href: '#media', featured: true },
   { name: 'Career', href: '#career' },
   { name: 'Vision', href: '#vision' },
-  { name: 'Media', href: '#media', featured: true },
-  { name: 'Principles', href: '#principles' },
+  { name: 'Philosophy', href: '#principles' },
   { name: 'Contact', href: '#contact' },
 ];
 
