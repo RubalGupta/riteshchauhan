@@ -300,15 +300,15 @@ export const HeroSection = () => {
                   label: 'Years',
                   color: 'from-primary to-primary/80'
                 }, {
-                  value: 'HP',
-                  label: 'Cadre',
+                  value: 'Secy',
+                  label: 'Govt HP',
                   color: 'from-secondary to-secondary/80'
                 }, {
                   value: 'Jt. Secy',
                   label: 'GoI',
                   color: 'from-slate-600 to-slate-700'
                 }, {
-                  value: '3',
+                  value: '5',
                   label: 'Depts',
                   color: 'from-cyan-500 to-cyan-600'
                 }].map((stat, index) => <motion.div key={stat.label} initial={{
