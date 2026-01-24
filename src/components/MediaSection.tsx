@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Play, ExternalLink, Youtube, Instagram, Facebook } from 'lucide-react';
+import mediaPmfby from '@/assets/media-pmfby.png';
+import mediaKangra from '@/assets/media-kangra.png';
 
 const mediaItems = [
   {
@@ -30,9 +32,9 @@ const mediaItems = [
     id: 3,
     platform: 'Instagram',
     icon: Instagram,
-    title: 'Behind the Scenes',
-    description: 'A glimpse into the daily life of governance and moments that define public service.',
-    thumbnail: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
+    title: 'Digital Innovation at PMFBY',
+    description: 'Delving into ground breaking digital innovations at Pradhan Mantri Fasal Bima Yojana (PMFBY).',
+    thumbnail: mediaPmfby,
     url: 'https://www.instagram.com/reels/DGxGnyQv3kZ/',
     duration: 'Reel',
     accent: 'from-pink-500 via-purple-500 to-orange-400',
@@ -42,8 +44,8 @@ const mediaItems = [
     platform: 'Facebook',
     icon: Facebook,
     title: 'Community Connect',
-    description: 'Engaging with communities and stakeholders on agricultural reforms and rural development.',
-    thumbnail: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=600&fit=crop',
+    description: 'Ritesh Chauhan IAS, DC Kangra speaks to Insighthimachal regarding various developmental activities going in Distt.',
+    thumbnail: mediaKangra,
     url: 'https://www.facebook.com/watch/?v=253423955025915',
     duration: 'Video',
     accent: 'from-blue-600 to-blue-700',
