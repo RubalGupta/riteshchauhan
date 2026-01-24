@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Sparkles, Heart, BookOpen, Mountain, Scale, Compass } from 'lucide-react';
+import { BookOpen, Mountain, Scale, Compass } from 'lucide-react';
 
 const principles = [
   {
-    icon: Sparkles,
+    symbol: 'Α',
     title: 'Arête',
     subtitle: 'Excellence Through Potential',
     description: 'The ancient Greek concept of realizing one\'s full potential — not perfection, but the continuous pursuit of being the best version of oneself in service of others.',
     source: 'Aristotle\'s Nicomachean Ethics',
   },
   {
-    icon: Heart,
+    symbol: 'Ω',
     title: 'Eudaemonia',
     subtitle: 'Living a Purposeful Life',
     description: 'Beyond happiness lies flourishing — a life aligned with virtue, meaning, and contribution to the greater good. True fulfillment comes from purposeful action.',
@@ -83,7 +83,7 @@ export const GuidingPrinciplesSection = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-full" />
                 <div className="relative">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground mb-6 group-hover:scale-110 transition-transform">
-                    <principle.icon size={32} />
+                    <span className="font-serif text-3xl font-bold">{principle.symbol}</span>
                   </div>
                   <h3 className="font-display text-3xl font-bold text-primary mb-1">
                     {principle.title}
