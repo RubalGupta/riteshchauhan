@@ -261,11 +261,35 @@ export const HeroSection = () => {
             delay: 0.5
           }} className="relative z-10">
               <div className="relative">
-                {/* Photo frame with gradient border */}
-                <div className="w-[360px] h-[200px] lg:w-[600px] lg:h-[340px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
-                  <div className="w-full h-full rounded-xl overflow-hidden bg-background">
-                    <img src={portraitImage} alt="Ritesh Chauhan - IAS Officer" className="w-full h-full object-cover object-center shadow-none" />
-                  </div>
+                {/* Layered decorative elements for depth */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="absolute -inset-4 lg:-inset-6 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/30 rounded-3xl blur-xl"
+                />
+                <motion.div 
+                  initial={{ opacity: 0, x: 20, y: 20 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="absolute -bottom-3 -right-3 lg:-bottom-5 lg:-right-5 w-full h-full bg-gradient-to-br from-accent/40 to-secondary/40 rounded-2xl"
+                />
+                <motion.div 
+                  initial={{ opacity: 0, x: -15, y: -15 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="absolute -top-2 -left-2 lg:-top-4 lg:-left-4 w-full h-full bg-gradient-to-tl from-primary/30 to-secondary/30 rounded-2xl"
+                />
+                {/* Saffron accent bar - left side */}
+                <motion.div 
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="absolute -left-3 lg:-left-5 top-4 bottom-4 w-1.5 bg-gradient-to-b from-[hsl(var(--saffron))] via-white to-[hsl(var(--india-green))] rounded-full origin-top"
+                />
+                {/* Photo container */}
+                <div className="relative w-[360px] h-[200px] lg:w-[600px] lg:h-[340px] rounded-2xl overflow-hidden shadow-elevated">
+                  <img src={portraitImage} alt="Ritesh Chauhan - IAS Officer" className="w-full h-full object-cover object-center" />
                 </div>
                 
                 {/* Floating badge */}
