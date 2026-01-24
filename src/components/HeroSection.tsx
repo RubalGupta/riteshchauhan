@@ -306,7 +306,7 @@ export const HeroSection = () => {
                 }, {
                   value: 'Jt. Secy',
                   label: 'GoI',
-                  color: 'from-accent to-accent/80'
+                  color: 'from-slate-600 to-slate-700'
                 }, {
                   value: '3',
                   label: 'Depts',
