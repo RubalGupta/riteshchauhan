@@ -156,7 +156,7 @@ export const HeroSection = () => {
             }} transition={{
               duration: 0.4,
               delay: 1.1 + index * 0.1
-            }} className="text-center p-3 rounded-xl backdrop-blur-sm border border-white/10 bg-muted">
+            }} className="text-center p-3 rounded-xl backdrop-blur-sm border border-white/10 bg-slate-500">
                   <div className="font-display text-2xl font-bold text-white">
                     {stat.value}
                   </div>
