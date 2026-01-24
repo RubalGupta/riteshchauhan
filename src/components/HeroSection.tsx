@@ -90,8 +90,7 @@ export const HeroSection = () => {
             delay: 0.7
           }} className="text-lg font-medium max-w-lg drop-shadow-md text-sky-700">
               A dedicated <strong className="font-bold text-sky-700">public servant</strong> committed to 
-              transparent governance, sustainable development, and empowering communities 
-              across <strong className="font-bold text-sky-700">Himachal Pradesh</strong> and India.
+              transparent governance and empowering communities. My goal is to help shape a transformation where <strong className="font-bold text-sky-700">technology serves not as a substitute for empathy, but as its most powerful expression</strong> in public policy.
             </motion.p>
 
             {/* Social Links */}
