@@ -294,10 +294,10 @@ export const HeroSection = () => {
               }} transition={{
                 duration: 0.6,
                 delay: 1
-              }} className="flex justify-center lg:justify-start gap-3 mt-8 w-full">
+              }} className="grid grid-cols-4 gap-2 mt-8 w-[360px] lg:w-[600px]">
                 {[{
                   value: '19+',
-                  label: 'Years Service',
+                  label: 'Years',
                   color: 'from-primary to-primary/80'
                 }, {
                   value: 'HP',
@@ -309,7 +309,7 @@ export const HeroSection = () => {
                   color: 'from-accent to-accent/80'
                 }, {
                   value: '3',
-                  label: 'Departments',
+                  label: 'Depts',
                   color: 'from-cyan-500 to-cyan-600'
                 }].map((stat, index) => <motion.div key={stat.label} initial={{
                   opacity: 0,
@@ -323,7 +323,7 @@ export const HeroSection = () => {
                 }} whileHover={{
                   scale: 1.05,
                   y: -2
-                }} className={`text-center px-4 py-3 rounded-xl bg-gradient-to-br ${stat.color} shadow-lg`}>
+                }} className={`text-center py-3 rounded-xl bg-gradient-to-br ${stat.color} shadow-lg`}>
                   <div className="font-display text-xl lg:text-2xl font-bold text-white">
                     {stat.value}
                   </div>
