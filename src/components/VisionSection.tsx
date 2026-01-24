@@ -1,33 +1,40 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Target, Users, Leaf, Lightbulb } from 'lucide-react';
+import { Target, Users, Leaf, Lightbulb, Globe, Cpu } from 'lucide-react';
 
 const visionPillars = [
   {
     icon: Target,
-    title: 'Good Governance',
-    description: 'Implementing transparent, accountable, and responsive administration that puts citizens first.',
+    title: 'Governance as Art',
+    description: 'Aligning data, design, and dignity. Governance is not just management of systems, but bridging policy with the lives of people it impacts.',
     color: 'from-primary to-primary/70',
   },
   {
-    icon: Users,
-    title: 'Inclusive Development',
-    description: 'Ensuring no community is left behind in the march towards progress and prosperity.',
+    icon: Cpu,
+    title: 'Technology for Empathy',
+    description: 'Leveraging satellite imagery and real-time data analytics to transform struggling schemes into responsive systems that serve human needs.',
     color: 'from-secondary to-secondary/70',
   },
   {
     icon: Leaf,
-    title: 'Sustainable Growth',
-    description: 'Balancing development with environmental conservation for future generations.',
+    title: 'Digital Agriculture',
+    description: 'Transforming agriculture from a livelihood of uncertainty into one of resilience and dignity through AI-powered tools and digital public systems.',
     color: 'from-primary to-secondary',
   },
   {
-    icon: Lightbulb,
-    title: 'Digital Innovation',
-    description: 'Leveraging technology to improve service delivery and citizen engagement.',
+    icon: Globe,
+    title: 'Global Collaboration',
+    description: 'Building networks with World Bank, FAO, and UNDP to lead national missions in digital agriculture and AI governance. UNDP is replicating initiatives across 8 nations.',
     color: 'from-secondary to-primary',
   },
+];
+
+const achievements = [
+  { value: 'US$2.17B', label: 'Disbursed to Farmers' },
+  { value: '10 Days', label: 'Claim Processing' },
+  { value: 'US$3B', label: 'Enterprise Turnover' },
+  { value: '8 Nations', label: 'Global Replication' },
 ];
 
 export const VisionSection = () => {
@@ -49,10 +56,37 @@ export const VisionSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
             Vision & <span className="text-gradient">Values</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Guiding principles that drive every decision and action in the pursuit 
-            of a better, more equitable society.
+          <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
+            I have been an IAS officer for two decades, witnessing firsthand the gap between policy 
+            and the lives of people it impacts. From farmers waiting months for crop insurance claims 
+            to cooperatives struggling with legacy systems — these experiences shaped my vision for 
+            <strong className="text-foreground"> technology that bridges this divide</strong>.
           </p>
+        </motion.div>
+
+        {/* Key Achievements */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto"
+        >
+          {achievements.map((item, index) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+              className="bg-card rounded-2xl p-5 text-center shadow-card"
+            >
+              <div className="font-display text-xl md:text-2xl font-bold text-primary">
+                {item.value}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                {item.label}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -61,7 +95,7 @@ export const VisionSection = () => {
               key={pillar.title}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
               className="group"
             >
               <div className="bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all h-full border border-transparent hover:border-primary/20">
@@ -79,18 +113,42 @@ export const VisionSection = () => {
           ))}
         </div>
 
+        {/* Future Vision */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-16 max-w-4xl mx-auto"
+        >
+          <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card border-l-4 border-primary">
+            <h3 className="font-display text-2xl font-semibold mb-4 text-primary">
+              The Next Decade
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              My past achievements are milestones, not destinations. In the next 10 years, I want to 
+              bring the power of <strong className="text-foreground">AI to tools that support agriculture 
+              and rural communities</strong>. In the long term, I will dedicate my efforts to collaborating 
+              with institutions such as the World Bank, FAO, and UNDP.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              In a nation where agriculture sustains nearly half the population and the country strives 
+              for inclusive growth, <strong className="text-foreground">digital public systems can transform 
+              agriculture from a livelihood of uncertainty into one of resilience and dignity</strong>.
+            </p>
+          </div>
+        </motion.div>
+
         {/* Quote */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-12 text-center"
         >
           <blockquote className="max-w-3xl mx-auto">
-            <p className="font-display text-2xl md:text-3xl italic text-foreground leading-relaxed">
-              "Public service is not just a profession; it's a sacred trust. Every decision 
-              we make affects lives, and every action must be guided by the principle of 
-              serving the greater good."
+            <p className="font-display text-xl md:text-2xl italic text-foreground leading-relaxed">
+              "Technology serves not as a substitute for empathy, but as its most powerful 
+              expression in public policy."
             </p>
             <footer className="mt-6 text-primary font-medium">
               — Ritesh Chauhan

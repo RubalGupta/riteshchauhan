@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { GraduationCap, Briefcase, Award, Heart } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, Trophy } from 'lucide-react';
 
 const highlights = [
   {
@@ -20,9 +20,9 @@ const highlights = [
     description: 'Empanelled as Joint Secretary, Government of India',
   },
   {
-    icon: Heart,
-    title: 'Passion',
-    description: 'Rural development, sustainable agriculture, and public welfare',
+    icon: Trophy,
+    title: 'Sports Legacy',
+    description: '7-time State Table Tennis Champion',
   },
 ];
 
@@ -56,23 +56,26 @@ export const ProfileSection = () => {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Ritesh Chauhan</strong> is an Indian Administrative 
-              Service (IAS) officer of the <strong className="text-foreground">2005 batch</strong>, 
-              belonging to the Himachal Pradesh cadre. Born on January 11, 1983, he has dedicated 
-              nearly two decades to public service.
+              I grew up in the <strong className="text-foreground">Himalayan foothills</strong>, 
+              where it was easy to measure governance since the basic necessities such as roads, 
+              schools, and health centers either existed or did not. In my childhood, I watched 
+              both my parents, government doctors, and learnt the true meaning of public service: 
+              <strong className="text-foreground"> showing up when no one else does</strong>. 
+              This shaped my belief that governance must be both efficient and rooted in humanity.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Fluent in English and Hindi, he brings a unique blend of administrative acumen and 
-              ground-level understanding to every role. His career trajectory reflects a deep 
-              commitment to <strong className="text-foreground">good governance</strong>, 
-              <strong className="text-foreground"> transparency</strong>, and 
-              <strong className="text-foreground"> citizen-centric policies</strong>.
+              Cracking what is considered <strong className="text-foreground">India's toughest 
+              competitive exam in my first attempt at twenty-two</strong> was exhilarating — a 
+              validation of grit, and small-town ambition. But becoming one of the youngest 
+              officers meant learning to lead among people decades older in age and experience. 
+              Finding my voice amid that environment taught me quiet assertion and earned respect.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Currently serving as <strong className="text-foreground">Secretary of the Animal 
-              Husbandry Department</strong>, he has been recognized for his exceptional work 
-              and empanelled as <strong className="text-foreground">Joint Secretary</strong> 
-              at the Government of India level.
+              Before bureaucracy, it was sports that taught me resilience. As a <strong className="text-foreground">
+              seven-time state table tennis champion</strong>, I learned to win with focus and 
+              lose with grace. That discipline and humility have stayed with me through every 
+              reform I have led. My worldview has been shaped by experiencing these contrasts — 
+              between youth and authority, ambition and service, technology and trust.
             </p>
           </motion.div>
 
