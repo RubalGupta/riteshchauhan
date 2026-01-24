@@ -105,7 +105,7 @@ export const HeroSection = () => {
             duration: 0.6,
             delay: 0.8
           }} className="flex gap-4 pt-4">
-              {socialLinks.map((social, index) => <motion.a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all border-muted" whileHover={{
+              {socialLinks.map((social, index) => <motion.a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/80 transition-all shadow-lg" whileHover={{
               scale: 1.1,
               y: -4
             }} whileTap={{
