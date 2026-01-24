@@ -16,7 +16,7 @@ const socialLinks = [{
   label: 'Email'
 }];
 export const HeroSection = () => {
-  return <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+  return <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20 lg:pt-24">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Digital India - Government Technology" className="w-full h-full object-cover" />
@@ -262,9 +262,9 @@ export const HeroSection = () => {
           }} className="relative z-10">
               <div className="relative">
                 {/* Photo frame with gradient border */}
-                <div className="w-[280px] h-[350px] lg:w-[340px] lg:h-[420px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
+                <div className="w-[340px] h-[280px] lg:w-[520px] lg:h-[380px] rounded-2xl p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-elevated">
                   <div className="w-full h-full rounded-xl overflow-hidden bg-background">
-                    <img src={portraitImage} alt="Ritesh Chauhan - IAS Officer" className="w-full h-full object-cover object-top shadow-md" />
+                    <img src={portraitImage} alt="Ritesh Chauhan - IAS Officer" className="w-full h-full object-cover object-center shadow-md" />
                   </div>
                 </div>
                 
