@@ -61,8 +61,8 @@ export const HeroSection = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.5
-          }} className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg text-cyan-700">
-              Ritesh <span className="text-cyan-700">Chauhan</span>
+          }} className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg text-muted-foreground">
+              Ritesh <span className="text-muted-foreground">Chauhan</span>
             </motion.h1>
 
             <motion.blockquote initial={{
