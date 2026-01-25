@@ -8,11 +8,11 @@ const socialLinks = [{
   label: 'LinkedIn'
 }, {
   icon: Facebook,
-  href: 'https://facebook.com',
+  href: 'https://www.facebook.com/ritesh.chauhan.777',
   label: 'Facebook'
 }, {
   icon: Mail,
-  href: 'mailto:contact@riteshchauhan.in',
+  href: 'mailto:ritesh.chauhan@gov.in',
   label: 'Email'
 }];
 export const HeroSection = () => {
