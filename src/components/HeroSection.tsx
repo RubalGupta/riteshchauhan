@@ -61,8 +61,8 @@ export const HeroSection = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.5
-          }} className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white drop-shadow-lg">
-              Ritesh <span className="text-sidebar">Chauhan</span>
+          }} className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg text-cyan-700">
+              Ritesh <span className="text-cyan-700">Chauhan</span>
             </motion.h1>
 
             <motion.blockquote initial={{
@@ -285,44 +285,44 @@ export const HeroSection = () => {
               
               {/* Stats - Below Portrait */}
               <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.6,
+              delay: 1
+            }} className="grid grid-cols-4 gap-2 mt-8 w-[360px] lg:w-[600px]">
+                {[{
+                value: '19+',
+                label: 'Years',
+                color: 'from-primary to-primary/80'
+              }, {
+                value: 'Secy',
+                label: 'Govt HP',
+                color: 'from-secondary to-secondary/80'
+              }, {
+                value: 'Jt. Secy',
+                label: 'GoI',
+                color: 'from-slate-600 to-slate-700'
+              }, {
+                value: '6',
+                label: 'Depts',
+                color: 'from-cyan-500 to-cyan-600'
+              }].map((stat, index) => <motion.div key={stat.label} initial={{
                 opacity: 0,
                 y: 20
               }} animate={{
                 opacity: 1,
                 y: 0
               }} transition={{
-                duration: 0.6,
-                delay: 1
-              }} className="grid grid-cols-4 gap-2 mt-8 w-[360px] lg:w-[600px]">
-                {[{
-                  value: '19+',
-                  label: 'Years',
-                  color: 'from-primary to-primary/80'
-                }, {
-                  value: 'Secy',
-                  label: 'Govt HP',
-                  color: 'from-secondary to-secondary/80'
-                }, {
-                  value: 'Jt. Secy',
-                  label: 'GoI',
-                  color: 'from-slate-600 to-slate-700'
-                }, {
-                  value: '6',
-                  label: 'Depts',
-                  color: 'from-cyan-500 to-cyan-600'
-                }].map((stat, index) => <motion.div key={stat.label} initial={{
-                  opacity: 0,
-                  y: 20
-                }} animate={{
-                  opacity: 1,
-                  y: 0
-                }} transition={{
-                  duration: 0.4,
-                  delay: 1.1 + index * 0.1
-                }} whileHover={{
-                  scale: 1.05,
-                  y: -2
-                }} className={`text-center py-3 rounded-xl bg-gradient-to-br ${stat.color} shadow-lg`}>
+                duration: 0.4,
+                delay: 1.1 + index * 0.1
+              }} whileHover={{
+                scale: 1.05,
+                y: -2
+              }} className={`text-center py-3 rounded-xl bg-gradient-to-br ${stat.color} shadow-lg`}>
                   <div className="font-display text-xl lg:text-2xl font-bold text-white">
                     {stat.value}
                   </div>
