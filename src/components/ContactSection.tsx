@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, MapPin, Linkedin, Twitter, Quote } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Facebook, Quote } from 'lucide-react';
 
 const contactInfo = [
   {
@@ -12,13 +12,15 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'Official channels only',
+    value: 'ritesh.chauhan@gov.in',
+    href: 'mailto:ritesh.chauhan@gov.in',
   },
 ];
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/ritesh-chauhan-58bb3646/', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+  { icon: Facebook, href: 'https://www.facebook.com/ritesh.chauhan.777', label: 'Facebook' },
+  { icon: Mail, href: 'mailto:ritesh.chauhan@gov.in', label: 'Email' },
 ];
 
 const testimonials = [
@@ -134,7 +136,7 @@ export const ContactSection = () => {
           </div>
         </div>
 
-        {/* Voices - What People Say */}
+        {/* Voices - What People Say (Commented out - content pending)
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -175,6 +177,7 @@ export const ContactSection = () => {
             </motion.div>
           ))}
         </div>
+        */}
       </div>
     </section>
   );
