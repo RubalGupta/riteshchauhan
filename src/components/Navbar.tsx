@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Video } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Video, Menu, X } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -15,6 +16,7 @@ const navLinks = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +31,7 @@ export const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(href.replace('#', ''));
+      setMobileMenuOpen(false);
     }
   };
 
@@ -135,6 +138,52 @@ export const Navbar = () => {
           >
             Connect
           </motion.a>
+
+          {/* Mobile Hamburger Menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <motion.button
+                className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+                whileTap={{ scale: 0.95 }}
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6 text-foreground" />
+              </motion.button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[280px] pt-12">
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
+                    className={`flex items-center gap-2 px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                      activeSection === link.href.replace('#', '')
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-muted-foreground hover:bg-muted/50'
+                    }`}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {link.featured && (
+                      <Video size={16} className="text-cyan-500" />
+                    )}
+                    {link.name}
+                  </motion.a>
+                ))}
+                <a
+                  href="https://www.linkedin.com/in/ritesh-chauhan-58bb3646/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center justify-center gap-2 px-4 py-3 bg-primary text-primary-foreground rounded-lg text-base font-medium"
+                >
+                  Connect on LinkedIn
+                </a>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </motion.nav>
