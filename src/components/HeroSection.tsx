@@ -307,7 +307,7 @@ export const HeroSection = () => {
                   label: 'GoI',
                   color: 'from-slate-600 to-slate-700'
                 }, {
-                  value: '5',
+                  value: '6',
                   label: 'Depts',
                   color: 'from-cyan-500 to-cyan-600'
                 }].map((stat, index) => <motion.div key={stat.label} initial={{
