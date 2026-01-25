@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Play, ExternalLink, Youtube, Instagram, Facebook } from 'lucide-react';
+import { Play, ExternalLink, Youtube, Instagram, Facebook, Linkedin } from 'lucide-react';
 import mediaPmfby from '@/assets/media-pmfby.png';
 import mediaKangra from '@/assets/media-kangra.png';
 
@@ -213,28 +213,20 @@ export const MediaSection = () => {
           <p className="text-muted-foreground mb-4">Follow for more updates on governance and public policy</p>
           <div className="flex items-center justify-center gap-4">
             <a
-              href="https://www.youtube.com/@riteshchauhan"
+              href="https://www.linkedin.com/in/ritesh-chauhan-58bb3646/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-300 group"
+              className="w-12 h-12 rounded-full bg-cyan-500 text-white flex items-center justify-center hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
             >
-              <Youtube size={20} className="group-hover:scale-110 transition-transform" />
+              <Linkedin size={20} />
             </a>
             <a
-              href="https://www.instagram.com/riteshchauhan"
+              href="https://www.facebook.com/ritesh.chauhan.777"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center hover:bg-gradient-to-br hover:from-pink-500 hover:via-purple-500 hover:to-orange-400 hover:border-transparent hover:text-white transition-all duration-300 group"
+              className="w-12 h-12 rounded-full bg-cyan-500 text-white flex items-center justify-center hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
             >
-              <Instagram size={20} className="group-hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href="https://www.facebook.com/riteshchauhan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 group"
-            >
-              <Facebook size={20} className="group-hover:scale-110 transition-transform" />
+              <Facebook size={20} />
             </a>
           </div>
         </motion.div>
