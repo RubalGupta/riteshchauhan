@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Facebook } from 'lucide-react';
+import { Linkedin, Facebook, Mail } from 'lucide-react';
 import heroImage from '@/assets/hero-mountain.jpg';
 import portraitImage from '@/assets/ritesh-portrait.jpg';
 const socialLinks = [{
@@ -10,6 +10,10 @@ const socialLinks = [{
   icon: Facebook,
   href: 'https://www.facebook.com/ritesh.chauhan.777',
   label: 'Facebook'
+}, {
+  icon: Mail,
+  href: 'mailto:ritesh.chauhan@gov.in',
+  label: 'Email'
 }];
 export const HeroSection = () => {
   return <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20 lg:pt-24">
