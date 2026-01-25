@@ -74,7 +74,7 @@ export const HeroSection = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.6
-          }} className="text-xl md:text-2xl font-display italic text-white font-semibold border-l-4 border-primary pl-4 drop-shadow-md">
+          }} className="text-xl md:text-2xl font-display italic font-semibold border-l-4 border-primary pl-4 drop-shadow-md text-muted-foreground">
               "The measure of a man is what he does with power"
               <span className="block text-sm mt-2 not-italic text-primary font-bold">— Plato</span>
             </motion.blockquote>
