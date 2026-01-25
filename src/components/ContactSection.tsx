@@ -20,7 +20,6 @@ const contactInfo = [
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/in/ritesh-chauhan-58bb3646/', label: 'LinkedIn' },
   { icon: Facebook, href: 'https://www.facebook.com/ritesh.chauhan.777', label: 'Facebook' },
-  { icon: Mail, href: 'mailto:ritesh.chauhan@gov.in', label: 'Email' },
 ];
 
 const testimonials = [
