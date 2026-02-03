@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Play, ExternalLink, Youtube, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Play, ExternalLink, Youtube, Instagram, Facebook, Linkedin, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import mediaPmfby from '@/assets/media-pmfby.png';
 import mediaKangra from '@/assets/media-kangra.png';
 
@@ -49,6 +56,18 @@ const mediaItems = [
     url: 'https://www.facebook.com/watch/?v=253423955025915',
     duration: 'Video',
     accent: 'from-blue-600 to-blue-700',
+  },
+];
+
+const articleItems = [
+  {
+    id: 1,
+    publication: 'AgroSpectrum',
+    title: 'India Should Move Toward Productivity-Linked Livestock Insurance',
+    description: '"India should move toward productivity-linked livestock insurance—but only through a phased, data-anchored evolution"',
+    url: 'https://www.magzter.com/stories/business/AgroSpectrum/INDIA-SHOULD-MOVE-TOWARD-PRODUCTIVITYLINKED-LIVESTOCK-INSURANCEBUT-ONLY-THROUGH-A-PHASED-DATAANCHORED-EVOLUTION',
+    date: 'February 2026',
+    type: 'Interview',
   },
 ];
 
@@ -202,6 +221,65 @@ export const MediaSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Articles & Interviews Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-16"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <FileText className="w-5 h-5 text-primary" />
+            <h3 className="font-display text-xl font-semibold text-foreground">Articles & Interviews</h3>
+          </div>
+          
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {articleItems.map((article) => (
+                <CarouselItem key={article.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <a
+                    href={article.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block h-full"
+                  >
+                    <div className="h-full p-6 bg-card rounded-2xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                          {article.type}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{article.date}</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-2">{article.publication}</p>
+                      <h4 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors mb-3 line-clamp-2">
+                        {article.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground line-clamp-3 italic">
+                        {article.description}
+                      </p>
+                      <div className="mt-4 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        Read article <ExternalLink size={14} />
+                      </div>
+                    </div>
+                  </a>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            {articleItems.length > 3 && (
+              <>
+                <CarouselPrevious className="hidden md:flex -left-4" />
+                <CarouselNext className="hidden md:flex -right-4" />
+              </>
+            )}
+          </Carousel>
+        </motion.div>
 
         {/* Social follow CTA */}
         <motion.div
