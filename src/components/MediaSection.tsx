@@ -257,11 +257,6 @@ export const MediaSection = () => {
                           {article.type}
                         </span>
                         <span className="text-xs text-muted-foreground">{article.date}</span>
-                        {article.pageHint && (
-                          <span className="px-2 py-0.5 rounded bg-accent/50 text-accent-foreground text-xs font-medium">
-                            {article.pageHint}
-                          </span>
-                        )}
                       </div>
                       <p className="text-sm text-muted-foreground mb-2">{article.publication}</p>
                       <h4 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors mb-3 line-clamp-2">
@@ -270,8 +265,15 @@ export const MediaSection = () => {
                       <p className="text-sm text-muted-foreground line-clamp-3 italic">
                         {article.description}
                       </p>
-                      <div className="mt-4 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                        Read article <ExternalLink size={14} />
+                      <div className="mt-4 flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                          Read article <ExternalLink size={14} />
+                        </div>
+                        {article.pageHint && (
+                          <span className="px-2.5 py-1 rounded-full bg-pink-500 text-white text-xs font-medium">
+                            {article.pageHint}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </a>
