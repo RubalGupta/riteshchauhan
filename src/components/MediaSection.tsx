@@ -68,6 +68,7 @@ const articleItems = [
     url: 'https://agrospectrumindia.com/e-magazine',
     date: 'February 2026',
     type: 'Interview',
+    pageHint: 'Page 28',
   },
 ];
 
@@ -256,6 +257,11 @@ export const MediaSection = () => {
                           {article.type}
                         </span>
                         <span className="text-xs text-muted-foreground">{article.date}</span>
+                        {article.pageHint && (
+                          <span className="px-2 py-0.5 rounded bg-accent/50 text-accent-foreground text-xs font-medium">
+                            {article.pageHint}
+                          </span>
+                        )}
                       </div>
                       <p className="text-sm text-muted-foreground mb-2">{article.publication}</p>
                       <h4 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors mb-3 line-clamp-2">
