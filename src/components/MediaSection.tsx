@@ -65,7 +65,7 @@ const articleItems = [
     publication: 'AgroSpectrum',
     title: 'India Should Move Toward Productivity-Linked Livestock Insurance',
     description: '"India should move toward productivity-linked livestock insurance—but only through a phased, data-anchored evolution"',
-    url: 'https://www.magzter.com/stories/business/AgroSpectrum/INDIA-SHOULD-MOVE-TOWARD-PRODUCTIVITYLINKED-LIVESTOCK-INSURANCEBUT-ONLY-THROUGH-A-PHASED-DATAANCHORED-EVOLUTION',
+    url: 'https://agrospectrumindia.com/e-magazine',
     date: 'February 2026',
     type: 'Interview',
   },
