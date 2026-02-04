@@ -153,25 +153,29 @@ export const Navbar = () => {
             <SheetContent side="right" className="w-[280px] pt-12">
               <nav className="flex flex-col gap-4">
                 {navLinks.map((link) => (
-                  <motion.a
+                  <button
                     key={link.name}
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setTimeout(() => {
+                        const element = document.querySelector(link.href);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                          setActiveSection(link.href.replace('#', ''));
+                        }
+                      }, 150);
                     }}
-                    className={`flex items-center gap-2 px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                    className={`flex items-center gap-2 px-4 py-3 rounded-lg text-base font-medium transition-colors text-left ${
                       activeSection === link.href.replace('#', '')
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:bg-muted/50'
                     }`}
-                    whileTap={{ scale: 0.98 }}
                   >
                     {link.featured && (
                       <Video size={16} className="text-cyan-500" />
                     )}
                     {link.name}
-                  </motion.a>
+                  </button>
                 ))}
                 <a
                   href="https://www.linkedin.com/in/ritesh-chauhan-58bb3646/"
