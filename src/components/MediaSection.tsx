@@ -70,6 +70,15 @@ const articleItems = [
     type: 'Interview',
     pageHint: 'Page 28',
   },
+  {
+    id: 2,
+    publication: 'The Hindu Business Line',
+    title: 'National Livestock Insurance: The Next Rural Revolution',
+    description: 'Exploring how national livestock insurance can transform rural economies and protect farmers\' livelihoods.',
+    url: 'https://www.thehindubusinessline.com/economy/agri-business/national-livestock-insurance-the-next-rural-revolution/article70281351.ece',
+    date: 'November 2025',
+    type: 'Article',
+  },
 ];
 
 export const MediaSection = () => {
