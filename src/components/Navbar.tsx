@@ -17,6 +17,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,21 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle pending scroll after sheet closes
+  useEffect(() => {
+    if (!mobileMenuOpen && pendingScroll) {
+      const timeout = setTimeout(() => {
+        const element = document.querySelector(pendingScroll);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          setActiveSection(pendingScroll.replace('#', ''));
+        }
+        setPendingScroll(null);
+      }, 350);
+      return () => clearTimeout(timeout);
+    }
+  }, [mobileMenuOpen, pendingScroll]);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -33,6 +49,11 @@ export const Navbar = () => {
       setActiveSection(href.replace('#', ''));
       setMobileMenuOpen(false);
     }
+  };
+
+  const handleMobileNavClick = (href: string) => {
+    setPendingScroll(href);
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -155,16 +176,7 @@ export const Navbar = () => {
                 {navLinks.map((link) => (
                   <button
                     key={link.name}
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      setTimeout(() => {
-                        const element = document.querySelector(link.href);
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                          setActiveSection(link.href.replace('#', ''));
-                        }
-                      }, 150);
-                    }}
+                    onClick={() => handleMobileNavClick(link.href)}
                     className={`flex items-center gap-2 px-4 py-3 rounded-lg text-base font-medium transition-colors text-left ${
                       activeSection === link.href.replace('#', '')
                         ? 'bg-primary/10 text-primary'
