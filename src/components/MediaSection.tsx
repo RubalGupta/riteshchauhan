@@ -253,7 +253,7 @@ export const MediaSection = () => {
           >
             <CarouselContent className="-ml-4">
               {articleItems.map((article) => (
-                <CarouselItem key={article.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={article.id} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
                   <a
                     href={article.url}
                     target="_blank"
@@ -289,7 +289,11 @@ export const MediaSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {articleItems.length > 3 && (
+            <div className="flex justify-center gap-2 mt-4 md:hidden">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+            </div>
+            {articleItems.length > 2 && (
               <>
                 <CarouselPrevious className="hidden md:flex -left-4" />
                 <CarouselNext className="hidden md:flex -right-4" />
