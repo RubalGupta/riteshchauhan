@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/carousel';
 import mediaPmfby from '@/assets/media-pmfby.png';
 import mediaKangra from '@/assets/media-kangra.png';
+import mediaNafed from '@/assets/media-nafed.jpg';
 
 const mediaItems = [
   {
@@ -56,6 +57,17 @@ const mediaItems = [
     url: 'https://www.facebook.com/watch/?v=253423955025915',
     duration: 'Video',
     accent: 'from-blue-600 to-blue-700',
+  },
+  {
+    id: 5,
+    platform: 'X',
+    icon: ExternalLink,
+    title: 'NAFED 66th Annual General Body Meeting',
+    description: 'Speaking at the 66th Annual General Body Meeting of NAFED (National Agricultural Cooperative Marketing Federation of India).',
+    thumbnail: mediaNafed,
+    url: 'https://x.com/nafedindia/status/1705194687156359262',
+    duration: 'Post',
+    accent: 'from-gray-800 to-black',
   },
 ];
 
