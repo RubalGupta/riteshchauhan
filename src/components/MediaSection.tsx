@@ -12,8 +12,20 @@ import {
 import mediaPmfby from '@/assets/media-pmfby.png';
 import mediaKangra from '@/assets/media-kangra.png';
 import mediaNafed from '@/assets/media-nafed.jpg';
+import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
 
 const mediaItems = [
+  {
+    id: 0,
+    platform: 'Facebook',
+    icon: Facebook,
+    title: 'NDDB MoU Signing: Boosting Dairy Sector in Himachal Pradesh',
+    description: 'MoU signing ceremony between the Government of Himachal Pradesh and National Dairy Development Board (NDDB) to strengthen the dairy sector in the state.',
+    thumbnail: mediaNddbMou,
+    url: 'https://www.facebook.com/himachaldastak/videos/डेयरी-क्षेत्र-में-सुक्खू-सरकार-ने-nddb-के-साथ-किया-mou-साइन-प्रदेश-के-दुग्ध-उत्प/1456783176099329/',
+    duration: 'Video',
+    accent: 'from-blue-600 to-blue-700',
+  },
   {
     id: 1,
     platform: 'YouTube',
