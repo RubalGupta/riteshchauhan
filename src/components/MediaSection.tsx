@@ -169,10 +169,12 @@ export const MediaSection = () => {
               {/* Content overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="flex items-center gap-3 mb-3">
+                  {(() => { const Icon = mediaItems[0].icon; return (
                   <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${mediaItems[0].accent}`}>
-                    <mediaItems[0].icon size={16} />
+                    <Icon size={16} />
                     {mediaItems[0].platform}
                   </span>
+                  ); })()}
                   <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm">
                     {mediaItems[0].duration}
                   </span>
