@@ -12,6 +12,7 @@ import {
 import mediaPmfby from '@/assets/media-pmfby.png';
 import mediaKangra from '@/assets/media-kangra.png';
 import mediaNafed from '@/assets/media-nafed.jpg';
+import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
 
 const mediaItems = [
   {
