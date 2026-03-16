@@ -22,7 +22,7 @@ const mediaItems = [
     title: 'NDDB MoU Signing: Boosting Dairy Sector in Himachal Pradesh',
     description: 'MoU signing ceremony between the Government of Himachal Pradesh and National Dairy Development Board (NDDB) to strengthen the dairy sector in the state.',
     thumbnail: mediaNddbMou,
-    url: 'https://www.facebook.com/himachaldastak/videos/डेयरी-क्षेत्र-में-सुक्खू-सरकार-ने-nddb-के-साथ-किया-mou-साइन-प्रदेश-के-दुग्ध-उत्प/1456783176099329/',
+    url: 'https://www.facebook.com/watch/?v=1456783176099329',
     duration: 'Video',
     accent: 'from-blue-600 to-blue-700',
   },
@@ -169,10 +169,12 @@ export const MediaSection = () => {
               {/* Content overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="flex items-center gap-3 mb-3">
+                  {(() => { const Icon = mediaItems[0].icon; return (
                   <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${mediaItems[0].accent}`}>
-                    <Youtube size={16} />
+                    <Icon size={16} />
                     {mediaItems[0].platform}
                   </span>
+                  ); })()}
                   <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm">
                     {mediaItems[0].duration}
                   </span>
