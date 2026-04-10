@@ -174,7 +174,7 @@ export const MediaSection = () => {
                   whileTap={{ scale: 0.95 }}
                   className="w-24 h-24 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl group-hover:bg-white transition-colors"
                 >
-                  <Play className="w-10 h-10 text-primary ml-1" fill="currentColor" />
+                  <ExternalLink className="w-10 h-10 text-primary" />
                 </motion.div>
               </div>
 
