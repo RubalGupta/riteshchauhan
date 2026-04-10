@@ -81,6 +81,17 @@ const mediaItems = [
     duration: 'Post',
     accent: 'from-gray-800 to-black',
   },
+  {
+    id: 6,
+    platform: 'LinkedIn',
+    icon: Linkedin,
+    title: 'With ₹300 Crore Plan, Himachal Pradesh Boosts Dairy Sector',
+    description: 'Himachal Pradesh announces a ₹300 crore plan to strengthen the dairy sector, driving rural development and farmer prosperity.',
+    thumbnail: mediaNddbMou,
+    url: 'https://www.linkedin.com/posts/ritesh-chauhan-58bb3646_with-rs-300-crore-plan-himachal-pradesh-activity-7448176743984824320-Bqlp',
+    duration: 'Post',
+    accent: 'from-blue-700 to-cyan-500',
+  },
 ];
 
 const articleItems = [
