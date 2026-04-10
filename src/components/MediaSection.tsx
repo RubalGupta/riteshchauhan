@@ -13,10 +13,22 @@ import mediaPmfby from '@/assets/media-pmfby.png';
 import mediaKangra from '@/assets/media-kangra.png';
 import mediaNafed from '@/assets/media-nafed.jpg';
 import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
+import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
 
 const mediaItems = [
   {
     id: 0,
+    platform: 'LinkedIn',
+    icon: Linkedin,
+    title: 'With ₹300 Crore Plan, Himachal Pradesh Boosts Dairy Sector',
+    description: 'Himachal Pradesh announces a ₹300 crore plan to strengthen the dairy sector, driving rural development and farmer prosperity.',
+    thumbnail: mediaHpDairy,
+    url: 'https://www.linkedin.com/posts/ritesh-chauhan-58bb3646_with-rs-300-crore-plan-himachal-pradesh-activity-7448176743984824320-Bqlp',
+    duration: 'Post',
+    accent: 'from-blue-700 to-cyan-500',
+  },
+  {
+    id: 1,
     platform: 'Facebook',
     icon: Facebook,
     title: 'NDDB MoU Signing: Boosting Dairy Sector in Himachal Pradesh',
@@ -80,17 +92,6 @@ const mediaItems = [
     url: 'https://x.com/nafedindia/status/1705194687156359262',
     duration: 'Post',
     accent: 'from-gray-800 to-black',
-  },
-  {
-    id: 6,
-    platform: 'LinkedIn',
-    icon: Linkedin,
-    title: 'With ₹300 Crore Plan, Himachal Pradesh Boosts Dairy Sector',
-    description: 'Himachal Pradesh announces a ₹300 crore plan to strengthen the dairy sector, driving rural development and farmer prosperity.',
-    thumbnail: mediaNddbMou,
-    url: 'https://www.linkedin.com/posts/ritesh-chauhan-58bb3646_with-rs-300-crore-plan-himachal-pradesh-activity-7448176743984824320-Bqlp',
-    duration: 'Post',
-    accent: 'from-blue-700 to-cyan-500',
   },
 ];
 
