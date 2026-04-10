@@ -95,9 +95,14 @@ export const ProfileSection = () => {
                 <h3 className="font-display text-lg font-semibold mb-2">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  {item.description}
-                </p>
+                <div className="text-muted-foreground text-sm">
+                  {Array.isArray(item.description)
+                    ? item.description.map((line, i) => (
+                        <p key={i} className={i > 0 ? 'mt-1' : ''}>{line}</p>
+                      ))
+                    : <p>{item.description}</p>
+                  }
+                </div>
               </motion.div>
             ))}
           </div>
