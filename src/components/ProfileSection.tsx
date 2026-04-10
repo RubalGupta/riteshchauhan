@@ -7,7 +7,7 @@ const highlights = [
   {
     icon: GraduationCap,
     title: 'Education',
-    description: 'Incoming MC-MPA at Harvard Kennedy School 2026–2027. B.A. from HP University Shimla; M.A. from IGNOU Delhi.',
+    description: ['Incoming MC-MPA at Harvard Kennedy School 2026–2027.', 'B.A. from HP University Shimla; M.A. from IGNOU Delhi.'],
   },
   {
     icon: Briefcase,
@@ -95,9 +95,14 @@ export const ProfileSection = () => {
                 <h3 className="font-display text-lg font-semibold mb-2">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  {item.description}
-                </p>
+                <div className="text-muted-foreground text-sm">
+                  {Array.isArray(item.description)
+                    ? item.description.map((line, i) => (
+                        <p key={i} className={i > 0 ? 'mt-1' : ''}>{line}</p>
+                      ))
+                    : <p>{item.description}</p>
+                  }
+                </div>
               </motion.div>
             ))}
           </div>
