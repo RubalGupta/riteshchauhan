@@ -7,7 +7,7 @@ const highlights = [
   {
     icon: GraduationCap,
     title: 'Education',
-    description: 'Incoming MC-MPA at Harvard Kennedy School 2026–2027. B.A. from HP University Shimla; M.A. from IGNOU Delhi.',
+    description: ['Incoming MC-MPA at Harvard Kennedy School 2026–2027.', 'B.A. from HP University Shimla; M.A. from IGNOU Delhi.'],
   },
   {
     icon: Briefcase,
