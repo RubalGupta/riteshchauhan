@@ -14,6 +14,7 @@ import mediaKangra from '@/assets/media-kangra.png';
 import mediaNafed from '@/assets/media-nafed.jpg';
 import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
 import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
+import mediaPehel from '@/assets/media-pehel.jpg';
 
 const mediaItems = [
   {
@@ -37,6 +38,17 @@ const mediaItems = [
     url: 'https://www.facebook.com/reel/1456783176099329/',
     duration: 'Video',
     accent: 'from-blue-600 to-blue-700',
+  },
+  {
+    id: 7,
+    platform: 'YouTube',
+    icon: Youtube,
+    title: "'Pehel' Scheme for Pastoralists",
+    description: 'Down To Earth feature on the Pehel scheme supporting pastoralist communities and their livelihoods.',
+    thumbnail: mediaPehel,
+    url: 'https://www.youtube.com/watch?v=mvVC_hL7IAA',
+    duration: 'Video',
+    accent: 'from-red-500 to-red-600',
   },
   {
     id: 1,
