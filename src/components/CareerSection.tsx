@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { TrendingUp, Users, Briefcase, Award } from 'lucide-react';
+import { TrendingUp, Users, Briefcase, Award, ExternalLink } from 'lucide-react';
+import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
 
 const careerHighlights = [
   {
@@ -151,6 +152,34 @@ export const CareerSection = () => {
                 <span className="inline-block px-3 py-1 bg-accent/50 rounded-full text-xs font-medium text-primary">
                   {item.impact}
                 </span>
+
+                {index === 0 && (
+                  <a
+                    href="https://www.linkedin.com/posts/ritesh-chauhan-58bb3646_with-rs-300-crore-plan-himachal-pradesh-activity-7448176743984824320-Bqlp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group block mt-4 rounded-xl overflow-hidden border border-border hover:border-primary/40 transition-all ${index % 2 === 0 ? 'md:ml-auto' : ''}`}
+                    style={{ maxWidth: '320px' }}
+                  >
+                    <div className="relative aspect-video">
+                      <img
+                        src={mediaHpDairy}
+                        alt="₹300 Crore Plan for Himachal Pradesh Dairy Sector"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+                    <div className="p-3 bg-card text-left">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium text-primary">₹300 Crore Dairy Plan</span>
+                        <ExternalLink size={12} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                        Himachal Pradesh announces a ₹300 crore plan to strengthen the dairy sector.
+                      </p>
+                    </div>
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
