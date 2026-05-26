@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { TrendingUp, Users, Briefcase, Award, ExternalLink } from 'lucide-react';
-import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
+import { TrendingUp, Users, Briefcase, Award } from 'lucide-react';
 
 const careerHighlights = [
   {
