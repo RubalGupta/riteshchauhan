@@ -7,7 +7,7 @@ const careerHighlights = [
   {
     year: 'Present',
     title: 'Secretary, Animal Husbandry, HP',
-    description: 'Working on State\'s First Small Ruminant development policy and contributing to the design of a National Livestock Insurance Program, keeping technology at the center to serve people.',
+    description: 'Rolling out a ₹300 Crore Dairy sector plan while working on the State\'s First Small Ruminant development policy and contributing to the design of a National Livestock Insurance Program, keeping technology at the center to serve people.',
     impact: '₹300 Crore Dairy sector plan rollout',
     highlight: true,
   },
