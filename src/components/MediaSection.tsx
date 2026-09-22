@@ -15,6 +15,7 @@ import mediaNafed from '@/assets/media-nafed.jpg';
 import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
 import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
 import mediaPehel from '@/assets/media-pehel.jpg';
+import mediaNafed67 from '@/assets/media-nafed-67th.png.asset.json';
 
 const mediaItems = [
   {
@@ -104,6 +105,17 @@ const mediaItems = [
     url: 'https://x.com/nafedindia/status/1705194687156359262',
     duration: 'Post',
     accent: 'from-gray-800 to-black',
+  },
+  {
+    id: 6,
+    platform: 'NAFED',
+    icon: ExternalLink,
+    title: 'NAFED Holds 67th AGM, Earns Highest-Ever Profit Since Its Inception',
+    description: 'Coverage of the 67th Annual General Body Meeting of NAFED, which recorded its highest-ever profit since inception.',
+    thumbnail: mediaNafed67.url,
+    url: 'https://www.indiancooperative.com/nafed/nafed-holds-67th-agm-earns-highest-ever-profit-since-its-inception/',
+    duration: 'Post',
+    accent: 'from-emerald-600 to-green-500',
   },
 ];
 
