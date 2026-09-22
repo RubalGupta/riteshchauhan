@@ -15,7 +15,7 @@ import mediaNafed from '@/assets/media-nafed.jpg';
 import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
 import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
 import mediaPehel from '@/assets/media-pehel.jpg';
-import mediaNafed67 from '@/assets/media-nafed-67th.png.asset.json';
+import mediaNafed67 from '@/assets/media-nafed-67th.png';
 
 const mediaItems = [
   {
