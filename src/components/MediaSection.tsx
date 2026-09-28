@@ -199,7 +199,7 @@ export const MediaSection = () => {
               <img
                 src={mediaItems[0].thumbnail}
                 alt={mediaItems[0].title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
