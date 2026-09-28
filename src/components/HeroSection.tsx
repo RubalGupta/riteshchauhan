@@ -48,7 +48,7 @@ export const HeroSection = () => {
             delay: 0.4
           }} className="inline-block">
               <span className="px-4 py-2 bg-tech-gradient text-white rounded-full text-sm font-medium shadow-lg">
-                IAS Officer • 2005 Batch
+                IAS Officer • 2005 Batch • 2026 Mason Fellow, Harvard
               </span>
             </motion.div>
 
