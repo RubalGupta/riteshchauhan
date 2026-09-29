@@ -5,13 +5,6 @@ import { TrendingUp, Users, Briefcase, Award } from 'lucide-react';
 
 const careerHighlights = [
   {
-    year: 'July 2026 – Present',
-    title: 'Mason Fellow, Harvard Kennedy School',
-    description: 'Pursuing the Mid-Career Master of Public Administration as a Mason Fellow at Harvard Kennedy School — deepening the intersection of technology, policy, and reflective leadership while continuing public service from Himachal Pradesh.',
-    impact: 'Mason Fellow, MC-MPA 2026–27',
-    highlight: true,
-  },
-  {
     year: 'Present',
     title: 'Secretary, Animal Husbandry, HP',
     description: 'Rolling out a ₹300 Crore Dairy sector plan while working on the State\'s First Small Ruminant development policy and contributing to the design of a National Livestock Insurance Program, keeping technology at the center to serve people.',
