@@ -16,20 +16,8 @@ import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
 import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
 import mediaPehel from '@/assets/media-pehel.jpg';
 import mediaNafed67 from '@/assets/media-nafed-67th.png';
-import mediaHarvard from '@/assets/media-harvard.jpg';
 
 const mediaItems = [
-  {
-    id: 8,
-    platform: 'LinkedIn',
-    icon: Linkedin,
-    title: 'Incoming Mason Fellow at Harvard Kennedy School',
-    description: 'Announcing the next chapter: joining Harvard Kennedy School as a Mason Fellow in the Mid-Career Master of Public Administration program, 2026–2027.',
-    thumbnail: mediaHarvard,
-    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7509920685549465600/',
-    duration: 'Post',
-    accent: 'from-blue-700 to-cyan-500',
-  },
   {
     id: 0,
     platform: 'LinkedIn',
