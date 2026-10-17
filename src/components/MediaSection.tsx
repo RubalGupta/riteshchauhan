@@ -38,7 +38,7 @@ const mediaItems = [
     icon: Linkedin,
     title: 'In Conversation with Ban Ki-moon',
     description: 'A memorable meeting with former UN Secretary-General Ban Ki-moon on global cooperation and public service.',
-    thumbnail: mediaBanKiMoonSpotlight,
+    thumbnail: mediaBanKiMoon,
     url: 'https://www.linkedin.com/feed/update/urn:li:activity:7516670676712345600/',
     duration: 'Post',
     accent: 'from-blue-700 to-cyan-500',
@@ -216,8 +216,14 @@ export const MediaSection = () => {
             <div className="aspect-video relative">
               <img
                 src={featuredItem.thumbnail}
+                alt=""
+                aria-hidden
+                className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-70"
+              />
+              <img
+                src={featuredItem.thumbnail}
                 alt={featuredItem.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="relative w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
