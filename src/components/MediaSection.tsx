@@ -16,8 +16,32 @@ import mediaNddbMou from '@/assets/media-nddb-mou.jpg';
 import mediaHpDairy from '@/assets/media-hp-dairy.jpg';
 import mediaPehel from '@/assets/media-pehel.jpg';
 import mediaNafed67 from '@/assets/media-nafed-67th.png';
+import mediaHksPortrait from '@/assets/media-hks-portrait.png';
+import mediaBanKiMoon from '@/assets/media-ban-ki-moon.jpg';
 
 const mediaItems = [
+  {
+    id: 8,
+    platform: 'LinkedIn',
+    icon: Linkedin,
+    title: 'Incoming Mason Fellow at Harvard Kennedy School',
+    description: 'Announcing the next chapter: joining Harvard Kennedy School as a Mason Fellow in the Mid-Career Master of Public Administration program, 2026–2027.',
+    thumbnail: mediaHksPortrait,
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7509920685549465600/',
+    duration: 'Post',
+    accent: 'from-blue-700 to-cyan-500',
+  },
+  {
+    id: 9,
+    platform: 'LinkedIn',
+    icon: Linkedin,
+    title: 'In Conversation with Ban Ki-moon',
+    description: 'A memorable meeting with former UN Secretary-General Ban Ki-moon on global cooperation and public service.',
+    thumbnail: mediaBanKiMoon,
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7516670676712345600/',
+    duration: 'Post',
+    accent: 'from-blue-700 to-cyan-500',
+  },
   {
     id: 0,
     platform: 'LinkedIn',
@@ -145,6 +169,11 @@ export const MediaSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Second LinkedIn post (Ban Ki-moon) is featured in the Spotlight card
+  const featuredIndex = 1;
+  const featuredItem = mediaItems[featuredIndex];
+  const gridItems = mediaItems.filter((_, index) => index !== featuredIndex);
+
   return (
     <section id="media" className="py-24 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden" ref={ref}>
       {/* Decorative elements */}
@@ -178,16 +207,16 @@ export const MediaSection = () => {
           className="mb-8"
         >
           <a
-            href={mediaItems[0].url}
+            href={featuredItem.url}
             target="_blank"
             rel="noopener noreferrer"
             className="group block relative rounded-3xl overflow-hidden shadow-2xl"
           >
             <div className="aspect-video relative">
               <img
-                src={mediaItems[0].thumbnail}
-                alt={mediaItems[0].title}
-                className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                src={featuredItem.thumbnail}
+                alt={featuredItem.title}
+                className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
@@ -205,21 +234,21 @@ export const MediaSection = () => {
               {/* Content overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="flex items-center gap-3 mb-3">
-                  {(() => { const Icon = mediaItems[0].icon; return (
-                  <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${mediaItems[0].accent}`}>
+                  {(() => { const Icon = featuredItem.icon; return (
+                  <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${featuredItem.accent}`}>
                     <Icon size={16} />
-                    {mediaItems[0].platform}
+                    {featuredItem.platform}
                   </span>
                   ); })()}
                   <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm">
-                    {mediaItems[0].duration}
+                    {featuredItem.duration}
                   </span>
                 </div>
                 <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-                  {mediaItems[0].title}
+                  {featuredItem.title}
                 </h3>
                 <p className="text-white/80 max-w-2xl">
-                  {mediaItems[0].description}
+                  {featuredItem.description}
                 </p>
               </div>
 
@@ -233,7 +262,7 @@ export const MediaSection = () => {
 
         {/* Grid of other videos */}
         <div className="grid md:grid-cols-3 gap-6">
-          {mediaItems.slice(1).map((item, index) => (
+          {gridItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
