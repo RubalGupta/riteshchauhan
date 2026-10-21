@@ -19,8 +19,20 @@ import mediaNafed67 from '@/assets/media-nafed-67th.png';
 import mediaHksPortrait from '@/assets/media-hks-portrait.png';
 import mediaBanKiMoon from '@/assets/media-ban-ki-moon.jpg';
 import mediaBanKiMoonSpotlight from '@/assets/media-ban-ki-moon-spotlight.jpg';
+import mediaPmfbyWebinar from '@/assets/media-pmfby-webinar.png';
 
 const mediaItems = [
+  {
+    id: 10,
+    platform: 'YouTube',
+    icon: Youtube,
+    title: 'PMFBY & RWBCIS: Risk Protection for Resilient Agriculture',
+    description: 'Panel discussion on crop insurance and risk protection for financially resilient agriculture — farmer coverage, area insured, and states joining the scheme.',
+    thumbnail: mediaPmfbyWebinar,
+    url: 'https://www.youtube.com/watch?v=V-fgeHSllpA',
+    duration: 'Panel',
+    accent: 'from-red-500 to-red-600',
+  },
   {
     id: 8,
     platform: 'LinkedIn',
@@ -170,8 +182,8 @@ export const MediaSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Second LinkedIn post (Ban Ki-moon) is featured in the Spotlight card
-  const featuredIndex = 1;
+  // LinkedIn post (Ban Ki-moon) stays featured in the Spotlight card
+  const featuredIndex = 2;
   const featuredItem = mediaItems[featuredIndex];
   const gridItems = mediaItems.filter((_, index) => index !== featuredIndex);
 
