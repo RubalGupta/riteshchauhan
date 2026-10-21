@@ -26,7 +26,7 @@ const mediaItems = [
     id: 10,
     platform: 'YouTube',
     icon: Youtube,
-    title: 'PMFBY & RWBCIS: Risk Protection for Resilient Agriculture',
+    title: 'Evaluating Crop Insurance as Climate Policy Panel',
     description: 'Panel discussion on crop insurance and risk protection for financially resilient agriculture — farmer coverage, area insured, and states joining the scheme.',
     thumbnail: mediaPmfbyWebinar,
     url: 'https://www.youtube.com/watch?v=V-fgeHSllpA',
