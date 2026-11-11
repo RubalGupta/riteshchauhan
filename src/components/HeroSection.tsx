@@ -295,7 +295,7 @@ export const HeroSection = () => {
               delay: 1
             }} className="grid grid-cols-4 gap-2 mt-8 w-[360px] lg:w-[600px]">
                 {[{
-                value: '19+',
+                value: '20+',
                 label: 'Years',
                 color: 'from-primary to-primary/80'
               }, {
