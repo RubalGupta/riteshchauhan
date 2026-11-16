@@ -20,8 +20,20 @@ import mediaHksPortrait from '@/assets/media-hks-portrait.png';
 import mediaBanKiMoon from '@/assets/media-ban-ki-moon.jpg';
 import mediaBanKiMoonSpotlight from '@/assets/media-ban-ki-moon-spotlight.jpg';
 import mediaPmfbyWebinar from '@/assets/media-pmfby-webinar.png';
+import mediaRccPanel from '@/assets/media-rcc-panel.jpg';
 
 const mediaItems = [
+  {
+    id: 11,
+    platform: 'Harvard RCC',
+    icon: ExternalLink,
+    title: 'Governing Emerging Technologies: Challenges for Democracy and Human Rights',
+    description: 'Panel discussion at the Real Colegio Complutense (RCC) in Harvard on governing emerging technologies — the risks a public leader must see before deploying them, and the stakes for democracy and human rights.',
+    thumbnail: mediaRccPanel,
+    url: 'https://rcc.harvard.edu/event/governing-emerging-technologies-challenges-democracy-and-human-rights',
+    duration: 'Panel',
+    accent: 'from-red-800 to-rose-500',
+  },
   {
     id: 10,
     platform: 'YouTube',
@@ -183,7 +195,7 @@ export const MediaSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   // LinkedIn post (Ban Ki-moon) stays featured in the Spotlight card
-  const featuredIndex = 2;
+  const featuredIndex = 3;
   const featuredItem = mediaItems[featuredIndex];
   const gridItems = mediaItems.filter((_, index) => index !== featuredIndex);
 
