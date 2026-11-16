@@ -20,7 +20,7 @@ import mediaHksPortrait from '@/assets/media-hks-portrait.png';
 import mediaBanKiMoon from '@/assets/media-ban-ki-moon.jpg';
 import mediaBanKiMoonSpotlight from '@/assets/media-ban-ki-moon-spotlight.jpg';
 import mediaPmfbyWebinar from '@/assets/media-pmfby-webinar.png';
-import mediaRccPanel from '@/assets/media-rcc-panel.jpg';
+import mediaRccPanel from '@/assets/media-rcc-panel-with-slide.jpg';
 
 const mediaItems = [
   {
