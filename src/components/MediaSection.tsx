@@ -292,25 +292,26 @@ export const MediaSection = () => {
         </motion.div>
 
         {/* Grid of other videos */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid auto-rows-fr md:grid-cols-3 gap-6">
           {gridItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              className="h-full min-w-0"
             >
               <a
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                className="group flex h-full flex-col relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="aspect-video relative">
+                <div className="aspect-video relative shrink-0 overflow-hidden">
                   <img
                     src={item.thumbnail}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   
@@ -341,11 +342,11 @@ export const MediaSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-5 bg-card">
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <div className="p-5 bg-card flex-1">
+                  <h3 className="h-[5.25rem] line-clamp-3 leading-7 font-display text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                  <p className="h-10 leading-5 text-sm text-muted-foreground line-clamp-2">
                     {item.description}
                   </p>
                 </div>
