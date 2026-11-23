@@ -233,6 +233,24 @@
     border: 1px solid hsl(0 0% 100% / 0.1);
   }
 
+  /* Auto-scrolling media strip */
+  @keyframes media-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-media-marquee {
+    animation: media-marquee 70s linear infinite;
+  }
+
+  .animate-media-marquee:hover {
+    animation-play-state: paused;
+  }
+
   /* Tricolor accent bar */
   .tricolor-bar {
     background: linear-gradient(90deg, hsl(24, 95%, 53%) 0%, hsl(24, 95%, 53%) 33%, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 100%) 67%, hsl(145, 63%, 42%) 67%, hsl(145, 63%, 42%) 100%);
