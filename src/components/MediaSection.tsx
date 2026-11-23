@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Play, ExternalLink, Youtube, Instagram, Facebook, Linkedin, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   Carousel,
@@ -198,6 +198,8 @@ export const MediaSection = () => {
   const featuredIndex = 3;
   const featuredItem = mediaItems[featuredIndex];
   const gridItems = mediaItems.filter((_, index) => index !== featuredIndex);
+  const [showAll, setShowAll] = useState(false);
+  const visibleItems = showAll ? gridItems : gridItems.slice(0, 6);
 
   return (
     <section id="media" className="py-24 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden" ref={ref}>
@@ -293,12 +295,12 @@ export const MediaSection = () => {
 
         {/* Grid of other videos */}
         <div className="grid auto-rows-fr md:grid-cols-3 gap-6">
-          {gridItems.map((item, index) => (
+          {visibleItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.3 + Math.min(index, 5) * 0.1 }}
               className="h-full min-w-0"
             >
               <a
@@ -354,6 +356,19 @@ export const MediaSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* View all toggle */}
+        {gridItems.length > 6 && (
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-primary/30 text-primary font-medium hover:bg-primary/10 transition-colors"
+            >
+              {showAll ? 'Show less' : `View all ${gridItems.length} media`}
+              <ChevronRight className={`w-4 h-4 transition-transform ${showAll ? '-rotate-90' : 'rotate-90'}`} />
+            </button>
+          </div>
+        )}
 
         {/* Articles & Interviews Carousel */}
         <motion.div
