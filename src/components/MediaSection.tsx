@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { Play, ExternalLink, Youtube, Instagram, Facebook, Linkedin, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   Carousel,
@@ -199,6 +199,68 @@ export const MediaSection = () => {
   const featuredItem = mediaItems[featuredIndex];
   const gridItems = mediaItems.filter((_, index) => index !== featuredIndex);
 
+  // Media strip: continuous auto-scroll (same speed as before: one full loop
+  // every 70s), pauses on hover, and left/right arrows jump one card.
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const targetRef = useRef<number | null>(null);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const count = gridItems.length;
+    let last = performance.now();
+    let frame = 0;
+
+    const tick = (now: number) => {
+      const dt = now - last;
+      last = now;
+      const first = track.children[0] as HTMLElement | undefined;
+      const copyStart = track.children[count] as HTMLElement | undefined;
+      const loopWidth = first && copyStart ? copyStart.offsetLeft - first.offsetLeft : 0;
+
+      if (loopWidth > 0) {
+        if (targetRef.current !== null) {
+          // Ease toward the arrow's target position
+          const diff = targetRef.current - offsetRef.current;
+          if (Math.abs(diff) < 0.5) {
+            offsetRef.current = targetRef.current;
+            targetRef.current = null;
+          } else {
+            offsetRef.current += diff * Math.min(1, dt / 120);
+          }
+        } else if (!pausedRef.current) {
+          offsetRef.current += (loopWidth / 70000) * dt;
+        }
+
+        // Wrap seamlessly (the card list is rendered twice)
+        if (offsetRef.current >= loopWidth) {
+          offsetRef.current -= loopWidth;
+          if (targetRef.current !== null) targetRef.current -= loopWidth;
+        } else if (offsetRef.current < 0) {
+          offsetRef.current += loopWidth;
+          if (targetRef.current !== null) targetRef.current += loopWidth;
+        }
+
+        track.style.transform = `translateX(${-offsetRef.current}px)`;
+      }
+      frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [gridItems.length]);
+
+  const scrollStrip = useCallback((direction: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track || track.children.length < 2) return;
+    const step =
+      (track.children[1] as HTMLElement).offsetLeft - (track.children[0] as HTMLElement).offsetLeft;
+    const base = targetRef.current ?? offsetRef.current;
+    targetRef.current = base + direction * step;
+  }, []);
+
   return (
     <section id="media" className="py-24 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden" ref={ref}>
       {/* Decorative elements */}
@@ -291,14 +353,33 @@ export const MediaSection = () => {
           </a>
         </motion.div>
 
-        {/* Auto-scrolling strip of media cards (pauses on hover) */}
+        {/* Auto-scrolling strip of media cards (pauses on hover, arrows to step) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="overflow-hidden"
+          className="relative"
+          onMouseEnter={() => { pausedRef.current = true; }}
+          onMouseLeave={() => { pausedRef.current = false; }}
         >
-          <div className="flex gap-6 w-max animate-media-marquee">
+          <button
+            type="button"
+            onClick={() => scrollStrip(-1)}
+            aria-label="Previous media"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-primary hover:bg-white hover:scale-110 transition-all"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollStrip(1)}
+            aria-label="Next media"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-primary hover:bg-white hover:scale-110 transition-all"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+          <div className="overflow-hidden">
+          <div ref={trackRef} className="flex gap-6 w-max">
             {[...gridItems, ...gridItems].map((item, index) => (
             <div
               key={`${item.id}-${index}`}
@@ -356,6 +437,7 @@ export const MediaSection = () => {
               </a>
             </div>
             ))}
+          </div>
           </div>
         </motion.div>
 
